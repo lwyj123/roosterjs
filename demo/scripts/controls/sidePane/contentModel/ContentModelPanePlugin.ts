@@ -21,7 +21,7 @@ export default class ContentModelPanePlugin extends SidePanePluginImpl<
         super.initialize(editor);
 
         this.contentModelRibbon.initialize(editor);
-        editor.getDocument().addEventListener('selectionchange', this.onModelChangeFromSelection);
+        editor.getEditorHost().addEventListener('selectionchange', this.onModelChangeFromSelection);
     }
 
     dispose(): void {

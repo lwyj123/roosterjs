@@ -126,7 +126,7 @@ function handleKeySelectionInsideTable(
                         : PositionType.After
                 );
 
-            const sel = editor.getDocument().defaultView?.getSelection();
+            const sel = editor.getEditorHost().defaultView?.getSelection();
             const { anchorNode, anchorOffset } = sel || {};
             if (
                 sel &&

@@ -55,7 +55,7 @@ export default class MouseUpPlugin implements EditorPlugin {
     private removeMouseUpEventListener() {
         if (this.editor && this.mouseUpEventListerAdded) {
             this.mouseUpEventListerAdded = false;
-            this.editor.getDocument().removeEventListener('mouseup', this.onMouseUp, true);
+            this.editor.getEditorHost().removeEventListener('mouseup', this.onMouseUp, true);
         }
     }
 

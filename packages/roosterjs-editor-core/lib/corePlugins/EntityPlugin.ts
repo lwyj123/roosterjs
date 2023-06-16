@@ -375,7 +375,7 @@ const workaroundSelectionIssueForIE = Browser.isIE
                           tag: 'button',
                           style: 'overflow:hidden;position:fixed;width:0;height:0;top:-1000px',
                       },
-                      editor.getDocument()
+                      editor.getEditorHost()
                   ) as HTMLElement;
                   button.onblur = () => {
                       button.style.display = 'none';

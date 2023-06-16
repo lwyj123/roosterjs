@@ -191,10 +191,10 @@ export default class CopyPastePlugin implements PluginWithState<CopyPastePluginS
             () => {
                 const tempDiv = createElement(
                     KnownCreateElementDataIndex.CopyPasteTempDiv,
-                    editor.getDocument()
+                    editor.getEditorHost()
                 ) as HTMLDivElement;
 
-                editor.getDocument().body.appendChild(tempDiv);
+                editor.getEditorHost().body.appendChild(tempDiv);
 
                 return tempDiv;
             },

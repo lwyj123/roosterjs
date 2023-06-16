@@ -89,7 +89,7 @@ parameters.forEach(({ description, key, command }) => {
             eventType: 0,
         };
         const shortCutFeature = ShortcutFeatures.defaultShortcut;
-        const spya = spyOn(editor.getDocument(), 'execCommand');
+        const spya = spyOn(editor.getEditorHost(), 'execCommand');
         shortCutFeature.handleEvent(event, editor);
         expect(spya).toHaveBeenCalledWith(command, false, undefined);
     });

@@ -23,7 +23,7 @@ describe('FormatUtils', () => {
     });
 
     it('toggleStrikethrough() triggers the strikethrough command in document', () => {
-        let document = editor.getDocument();
+        let document = editor.getEditorHost();
         spyOn(document, 'execCommand').and.callThrough();
 
         toggleStrikethrough(editor);
@@ -32,7 +32,7 @@ describe('FormatUtils', () => {
     });
 
     it('toggleSuperscript() triggers the superscript command in document', () => {
-        let document = editor.getDocument();
+        let document = editor.getEditorHost();
         spyOn(document, 'execCommand').and.callThrough();
 
         toggleSuperscript(editor);
@@ -41,7 +41,7 @@ describe('FormatUtils', () => {
     });
 
     it('toggleSubscript() triggers the subscript command in document', () => {
-        let document = editor.getDocument();
+        let document = editor.getEditorHost();
         spyOn(document, 'execCommand').and.callThrough();
 
         toggleSubscript(editor);

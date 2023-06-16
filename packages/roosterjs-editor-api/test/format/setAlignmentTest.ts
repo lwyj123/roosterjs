@@ -94,7 +94,7 @@ describe('setAlignment()', () => {
     });
 
     function runningTest(alignment: Alignment, command: string) {
-        let document = editor.getDocument();
+        let document = editor.getEditorHost();
         spyOn(editor, 'addUndoSnapshot').and.callThrough();
         spyOn(document, 'execCommand').and.callThrough();
 
@@ -105,7 +105,7 @@ describe('setAlignment()', () => {
     }
 
     function runningTestInTable(alignment: Alignment, table: string) {
-        let document = editor.getDocument();
+        let document = editor.getEditorHost();
         spyOn(editor, 'addUndoSnapshot').and.callThrough();
         spyOn(editor, 'isFeatureEnabled').and.returnValue(true);
         editor.setContent('<table id="tableSelected0"><tr><td></td></tr></table>');
@@ -126,7 +126,7 @@ describe('setAlignment()', () => {
     }
 
     function runningTestInList(alignment: Alignment, list: string, multipleItems?: boolean) {
-        let document = editor.getDocument();
+        let document = editor.getEditorHost();
         spyOn(editor, 'addUndoSnapshot').and.callThrough();
         spyOn(editor, 'isFeatureEnabled').and.returnValue(true);
         editor.setContent(

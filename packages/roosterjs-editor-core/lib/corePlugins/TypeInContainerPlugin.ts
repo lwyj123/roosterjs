@@ -88,7 +88,7 @@ export default class TypeInContainerPlugin implements EditorPlugin {
                 };
 
                 if (Browser.isMobileOrTablet) {
-                    this.editor.getDocument().defaultView?.setTimeout(callback, 100);
+                    this.editor.getEditorHost().defaultView?.setTimeout(callback, 100);
                 } else {
                     this.editor.runAsync(callback);
                 }

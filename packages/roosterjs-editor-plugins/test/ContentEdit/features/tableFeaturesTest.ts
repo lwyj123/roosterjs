@@ -30,7 +30,7 @@ describe('TableFeature', () => {
             `<table id="${TEST_ELEMENT_ID}"><tr><td>Text1</td><td>Text2</td></tr><tr><td>Text3</td><td>Text4</td></tr></table>`
         );
         editor.focus();
-        table = editor.getDocument().getElementById(TEST_ELEMENT_ID) as HTMLTableElement;
+        table = editor.getEditorHost().getElementById(TEST_ELEMENT_ID) as HTMLTableElement;
         const td = table.querySelector('td,th');
         editor.select(td!, 0);
         keyboardEvent = {
@@ -192,7 +192,7 @@ describe('TableFeature', () => {
                     `<blockquote><table id="${TEST_ELEMENT_ID}"><tr><td>Text</td><td>Text</td></tr><tr><td>Text</td><td>Text</td></tr></table></blockquote>`
                 );
                 editor.focus();
-                table = editor.getDocument().getElementById(TEST_ELEMENT_ID) as HTMLTableElement;
+                table = editor.getEditorHost().getElementById(TEST_ELEMENT_ID) as HTMLTableElement;
                 const td = table.querySelector('td,th');
                 editor.select(td!, 0);
                 runTest(true);

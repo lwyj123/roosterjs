@@ -44,7 +44,7 @@ export function handleMouseDownEvent(
                 state.lastTarget = state.vTable.getCell(lastCell.y, lastCell.x).td;
 
                 if (state.firstTarget && state.lastTarget) {
-                    const selection = editor.getDocument().defaultView?.getSelection();
+                    const selection = editor.getEditorHost().defaultView?.getSelection();
                     selection?.setBaseAndExtent(state.firstTarget, 0, state.lastTarget, 0);
                     selectTable(editor, state);
                 }
@@ -57,7 +57,7 @@ export function handleMouseDownEvent(
         clearState(state, editor);
 
         if (getTableAtCursor(editor, event.rawEvent.target)) {
-            const doc = editor.getDocument() || document;
+            const doc = editor.getEditorHost() || document;
 
             const mouseUpListener = getOnMouseUp(state);
             const mouseMoveListener = onMouseMove(state, editor);
@@ -75,7 +75,7 @@ export function handleMouseDownEvent(
 
     if (which == LEFT_CLICK && shiftKey) {
         editor.runAsync(editor => {
-            const sel = editor.getDocument().defaultView?.getSelection();
+            const sel = editor.getEditorHost().defaultView?.getSelection();
             const first = getCellAtCursor(editor, sel?.anchorNode);
             const last = getCellAtCursor(editor, sel?.focusNode);
             const firstTable = getTableAtCursor(editor, first);

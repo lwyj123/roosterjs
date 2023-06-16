@@ -197,7 +197,7 @@ xdescribe('Table Resizer/Inserter tests', () => {
     });
 
     function getCellRect(i: number, j: number): DOMRect | undefined {
-        const tables = editor.getDocument().getElementsByTagName('table');
+        const tables = editor.getEditorHost().getElementsByTagName('table');
         if (!tables || tables.length < 1) {
             return undefined;
         }
@@ -213,16 +213,16 @@ xdescribe('Table Resizer/Inserter tests', () => {
 
     function initialize(tableIndex: number, isRtl: boolean = false): DOMRect {
         if (isRtl) {
-            editor.getDocument().body.style.direction = 'rtl';
+            editor.getEditorHost().body.style.direction = 'rtl';
         }
-        const editorDiv = editor.getDocument().getElementById(TEST_ID);
+        const editorDiv = editor.getEditorHost().getElementById(TEST_ID);
         editorDiv.innerHTML = testTables[tableIndex].htmlData;
         const table = document.getElementsByTagName('table')[0];
         return table.getBoundingClientRect();
     }
 
     function getCurrentTable(): HTMLTableElement {
-        return editor.getDocument().getElementsByTagName('table')[0] as HTMLTableElement;
+        return editor.getEditorHost().getElementsByTagName('table')[0] as HTMLTableElement;
     }
 
     function getTableRows(table: HTMLTableElement): number {
@@ -241,7 +241,7 @@ xdescribe('Table Resizer/Inserter tests', () => {
             })
         );
 
-        const inserter = editor.getDocument().getElementById(inserterType);
+        const inserter = editor.getEditorHost().getElementById(inserterType);
         if (!!inserter) {
             const table = getCurrentTable();
             const rows = getTableRows(table);
@@ -296,7 +296,7 @@ xdescribe('Table Resizer/Inserter tests', () => {
     }
 
     function moveAndResize(mouseStart: Position, mouseEnd: Position, resizeState: ResizeState) {
-        const editorDiv = editor.getDocument().getElementById(TEST_ID);
+        const editorDiv = editor.getEditorHost().getElementById(TEST_ID);
         let resizerId: string;
         switch (resizeState) {
             case ResizeState.Both:
@@ -318,7 +318,7 @@ xdescribe('Table Resizer/Inserter tests', () => {
         });
         handler.mousemove(mouseMoveEvent);
 
-        let resizer = editor.getDocument().getElementById(resizerId);
+        let resizer = editor.getEditorHost().getElementById(resizerId);
         if (!!resizer) {
             const tableBeforeClick = getTableRectSet(getCurrentTable());
             const mouseClickEvent = new MouseEvent('mousedown');
@@ -331,7 +331,7 @@ xdescribe('Table Resizer/Inserter tests', () => {
                 clientX: mouseEnd.x,
                 clientY: mouseEnd.y,
             });
-            const doc = editor.getDocument();
+            const doc = editor.getEditorHost();
             // this will assign handler.resizeCells with the actual handler
             doc.dispatchEvent(mouseMoveResize);
             handler.resizeCells(mouseMoveResize);
@@ -340,7 +340,7 @@ xdescribe('Table Resizer/Inserter tests', () => {
             const mouseMoveEndEvent = new MouseEvent('mouseup');
             editorDiv.dispatchEvent(mouseMoveEndEvent);
 
-            resizer = editor.getDocument().getElementById(resizerId);
+            resizer = editor.getEditorHost().getElementById(resizerId);
             expect(!!resizer).toBe(false);
         }
     }
@@ -349,7 +349,7 @@ xdescribe('Table Resizer/Inserter tests', () => {
 
     function removeResizerTest(pluginEvent: PluginEvent) {
         plugin.onPluginEvent(pluginEvent);
-        const resizer = editor.getDocument().getElementById(TABLE_RESIZER);
+        const resizer = editor.getEditorHost().getElementById(TABLE_RESIZER);
         expect(!!resizer).toBe(false);
     }
 
@@ -372,7 +372,7 @@ xdescribe('Table Resizer/Inserter tests', () => {
     it('removes table resisizer on scrolling', () => {
         const pluginEvent: PluginEvent = {
             eventType: PluginEventType.Scroll,
-            scrollContainer: editor.getDocument().body as HTMLElement,
+            scrollContainer: editor.getEditorHost().body as HTMLElement,
             rawEvent: null,
         };
         removeResizerTest(pluginEvent);

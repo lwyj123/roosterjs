@@ -85,7 +85,7 @@ export default function createLink(
                         // Change text content if it is specified
                         updateAnchorDisplayText(anchor, displayText);
                     } else {
-                        anchor = editor.getDocument().createElement('A') as HTMLAnchorElement;
+                        anchor = editor.getEditorHost().createElement('A') as HTMLAnchorElement;
                         anchor.textContent = displayText || originalUrl;
                         anchor.href = normalizedUrl;
                         editor.insertNode(anchor);

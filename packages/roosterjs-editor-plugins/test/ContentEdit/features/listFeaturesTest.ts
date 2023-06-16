@@ -194,7 +194,7 @@ describe('listFeatures | IndentWhenTab | OutdentWhenShiftTab', () => {
 
     beforeEach(() => {
         editor = TestHelper.initEditor(TEST_ID);
-        list = editor.getDocument().getElementById(TEST_ID) as HTMLOListElement;
+        list = editor.getEditorHost().getElementById(TEST_ID) as HTMLOListElement;
         editor.setContent(`<ol id="${TEST_ID}"><li>1</li><li>2</li><li>3</li></ol>`);
         editor.focus();
         setIndentationFn = spyOn(setIndentation, 'default');
@@ -344,7 +344,7 @@ describe('listFeatures | MergeInNewLine', () => {
     });
 
     function runTestShouldHandleEvent(isAtBeginning: boolean, shouldHandle: boolean) {
-        const item = editor.getDocument().getElementById(ITEM_2) as HTMLLIElement;
+        const item = editor.getEditorHost().getElementById(ITEM_2) as HTMLLIElement;
         const keyboardEvent: PluginKeyboardEvent = {
             eventType: PluginEventType.KeyDown,
             rawEvent: getKeyboardEvent(false),
@@ -434,7 +434,7 @@ describe('listFeatures | OutdentWhenBackOn1stEmptyLine', () => {
     function runTestShouldHandleEvent(content: string, shouldHandle: boolean) {
         editor.setContent(content);
         editor.focus();
-        const item = editor.getDocument().getElementById(ITEM_1) as HTMLLIElement;
+        const item = editor.getEditorHost().getElementById(ITEM_1) as HTMLLIElement;
         const keyboardEvent: PluginKeyboardEvent = {
             eventType: PluginEventType.KeyDown,
             rawEvent: getKeyboardEvent(false),
@@ -456,7 +456,7 @@ describe('listFeatures | OutdentWhenBackOn1stEmptyLine', () => {
     function runTestHandleEvent(content: string) {
         editor.setContent(content);
         editor.focus();
-        const item = editor.getDocument().getElementById(ITEM_1) as HTMLLIElement;
+        const item = editor.getEditorHost().getElementById(ITEM_1) as HTMLLIElement;
         const range = document.createRange();
         range.setStart(item, 0);
         range.collapse();
@@ -513,7 +513,7 @@ describe('listFeatures | MaintainListChainWhenDelete', () => {
     function runTestHandleEvent(content: string) {
         editor.setContent(content);
         editor.focus();
-        const item = editor.getDocument().getElementById(ITEM_1);
+        const item = editor.getEditorHost().getElementById(ITEM_1);
         const range = document.createRange();
         range.setStart(item, 0);
         range.collapse();
@@ -563,7 +563,7 @@ describe('listFeatures | OutdentWhenEnterOnEmptyLine', () => {
     function runTestShouldHandleEvent(content: string, shiftKey: boolean, shouldHandle: boolean) {
         editor.setContent(content);
         editor.focus();
-        const item = editor.getDocument().getElementById(ITEM_1) as HTMLLIElement;
+        const item = editor.getEditorHost().getElementById(ITEM_1) as HTMLLIElement;
         if (item) {
             const range = document.createRange();
             range.setStart(item, 0);
@@ -589,7 +589,7 @@ describe('listFeatures | OutdentWhenEnterOnEmptyLine', () => {
     function runTestHandleEvent(content: string) {
         editor.setContent(content);
         editor.focus();
-        const item = editor.getDocument().getElementById(ITEM_1) as HTMLLIElement;
+        const item = editor.getEditorHost().getElementById(ITEM_1) as HTMLLIElement;
         const range = document.createRange();
         range.setStart(item, 0);
         range.collapse();
@@ -654,7 +654,7 @@ describe('listFeatures | MaintainListChain', () => {
     function runTestShouldHandleEvent(content: string, shouldHandle: boolean) {
         editor.setContent(content);
         editor.focus();
-        const item = editor.getDocument().getElementById(TEST_ID);
+        const item = editor.getEditorHost().getElementById(TEST_ID);
         if (item) {
             const range = document.createRange();
             range.setStart(item, 0);
@@ -680,7 +680,7 @@ describe('listFeatures | MaintainListChain', () => {
     function runTestHandleEvent(content: string) {
         editor.setContent(content);
         editor.focus();
-        const item = editor.getDocument().getElementById(ITEM_1);
+        const item = editor.getEditorHost().getElementById(ITEM_1);
         if (item) {
             const range = document.createRange();
             range.setStart(item, 1);
@@ -746,7 +746,7 @@ describe('listFeatures | mergeListOnBackspaceAfterList', () => {
     function runTestShouldHandleEvent(content: string, shouldHandle: boolean) {
         editor.setContent(content);
         editor.focus();
-        const item = editor.getDocument().getElementById(ITEM_1);
+        const item = editor.getEditorHost().getElementById(ITEM_1);
         if (item) {
             const range = document.createRange();
             range.setStart(item, 0);
@@ -771,7 +771,7 @@ describe('listFeatures | mergeListOnBackspaceAfterList', () => {
     function runTestHandleEvent(content: string) {
         editor.setContent(content);
         editor.focus();
-        const item = editor.getDocument().getElementById(ITEM_1);
+        const item = editor.getEditorHost().getElementById(ITEM_1);
         if (item) {
             const range = document.createRange();
             range.setStart(item, 0);

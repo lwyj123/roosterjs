@@ -1,3 +1,4 @@
+import * as React from 'react';
 import showEmojiCallout, { EmojiICallout } from '../components/showEmojiCallout';
 import { Emoji } from '../type/Emoji';
 import { EmojiPane } from '../components/EmojiPane';
@@ -21,7 +22,6 @@ import {
     EmojiFamilyStrings,
     EmojiKeywordStrings,
 } from '../type/EmojiStrings';
-import * as React from 'react';
 
 const KEYCODE_COLON = 186;
 const KEYCODE_COLON_FIREFOX = 59;
@@ -244,7 +244,7 @@ class EmojiPlugin implements ReactEditorPlugin {
         if (!wordBeforeCursor || !this.editor || !emoji.codePoint) {
             return;
         }
-        const node = this.editor.getDocument().createElement('span');
+        const node = this.editor.getEditorHost().createElement('span');
         node.innerText = emoji.codePoint;
 
         this.editor.addUndoSnapshot(

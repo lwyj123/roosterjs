@@ -81,7 +81,7 @@ describe('Text Features |', () => {
                     TextFeatures.indentWhenTabText,
                     `<div id='${TEST_ELEMENT_ID}'></div>`,
                     () => {
-                        const element = editor.getDocument().getElementById(TEST_ELEMENT_ID);
+                        const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID);
                         const range = new Range();
                         range.setStart(element, 0);
                         editor.select(range);
@@ -95,7 +95,7 @@ describe('Text Features |', () => {
                     TextFeatures.indentWhenTabText,
                     `<div id='${TEST_ELEMENT_ID}'>Test</div>`,
                     () => {
-                        const element = editor.getDocument().getElementById(TEST_ELEMENT_ID);
+                        const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID);
                         const range = new Range();
                         range.setStart(element, 0);
                         range.setEnd(element, 1);
@@ -110,7 +110,7 @@ describe('Text Features |', () => {
                     TextFeatures.indentWhenTabText,
                     `<div> <ol> <li id='${TEST_ELEMENT_ID}'>sad </li></ol> </div>`,
                     () => {
-                        const element = editor.getDocument().getElementById(TEST_ELEMENT_ID);
+                        const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID);
                         const range = new Range();
                         range.setStart(element, 0);
                         editor.select(range);
@@ -124,7 +124,7 @@ describe('Text Features |', () => {
                     TextFeatures.indentWhenTabText,
                     `<div><br></div><div id='${TEST_ELEMENT_ID}' class="_Entity _EType_ _EReadonly_1" contenteditable="false"><span data-hydrated-html="">Not Editable</span></div>`,
                     () => {
-                        const element = editor.getDocument().getElementById(TEST_ELEMENT_ID);
+                        const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID);
                         const range = new Range();
                         range.setStart(element, 0);
                         editor.select(range);
@@ -138,7 +138,7 @@ describe('Text Features |', () => {
                     TextFeatures.indentWhenTabText,
                     `<div><br></div><div class="_Entity _EType_ _EReadonly_1" contenteditable="false"><span data-hydrated-html="<a href='https://github.com/microsoft/roosterjs'>Link</a>"><a id='${TEST_ELEMENT_ID}' href="https://github.com/microsoft/roosterjs">Link</a></span></div><br>`,
                     () => {
-                        const element = editor.getDocument().getElementById(TEST_ELEMENT_ID);
+                        const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID);
                         element.focus();
                     },
                     false,
@@ -175,7 +175,7 @@ describe('Text Features |', () => {
                     TextFeatures.indentWhenTabText,
                     `<div id='${TEST_ELEMENT_ID}'></div>`,
                     () => {
-                        const element = editor.getDocument().getElementById(TEST_ELEMENT_ID);
+                        const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID);
                         const range = new Range();
                         range.setStart(element, 0);
                         editor.select(range);
@@ -191,7 +191,7 @@ describe('Text Features |', () => {
                         TextFeatures.indentWhenTabText,
                         `<div id='${TEST_ELEMENT_ID}'>Test</div>`,
                         () => {
-                            const element = editor.getDocument().getElementById(TEST_ELEMENT_ID)
+                            const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID)
                                 .firstChild;
                             const range = new Range();
                             range.setStart(element, 0);
@@ -210,7 +210,7 @@ describe('Text Features |', () => {
                         TextFeatures.indentWhenTabText,
                         `<div id='${TEST_ELEMENT_ID}'>Test</div>`,
                         () => {
-                            const element = editor.getDocument().getElementById(TEST_ELEMENT_ID)
+                            const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID)
                                 .firstChild;
                             const range = new Range();
                             range.setStart(element, 0);
@@ -229,7 +229,7 @@ describe('Text Features |', () => {
                         TextFeatures.indentWhenTabText,
                         `<div id='${TEST_ELEMENT_ID}'><span><span></span></span>Test</div>`,
                         () => {
-                            const element = editor.getDocument().getElementById(TEST_ELEMENT_ID)
+                            const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID)
                                 .lastChild;
                             const range = new Range();
                             range.setStart(element, 0);
@@ -248,7 +248,7 @@ describe('Text Features |', () => {
                         TextFeatures.indentWhenTabText,
                         `<div id='${TEST_ELEMENT_ID}'><span><b></b></span><span></span>Test</div>`,
                         () => {
-                            const element = editor.getDocument().getElementById(TEST_ELEMENT_ID)
+                            const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID)
                                 .lastChild;
                             const range = new Range();
                             range.setStart(element, 0);
@@ -267,7 +267,7 @@ describe('Text Features |', () => {
                         TextFeatures.indentWhenTabText,
                         `<div id='${TEST_ELEMENT_ID}'><span><b></b></span><i></i><span></span>Test</div>`,
                         () => {
-                            const element = editor.getDocument().getElementById(TEST_ELEMENT_ID)
+                            const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID)
                                 .lastChild;
                             const range = new Range();
                             range.setStart(element, 0);
@@ -286,7 +286,7 @@ describe('Text Features |', () => {
                         TextFeatures.indentWhenTabText,
                         `<div id='${TEST_ELEMENT_ID}'><span><b><i><u></u></i></b></span><span><b><i><u></u></i></b></span>Test</div>`,
                         () => {
-                            const element = editor.getDocument().getElementById(TEST_ELEMENT_ID)
+                            const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID)
                                 .lastChild;
                             const range = new Range();
                             range.setStart(element, 0);
@@ -305,7 +305,7 @@ describe('Text Features |', () => {
                         TextFeatures.indentWhenTabText,
                         `<div id='${TEST_ELEMENT_ID}'>Test<span><span></span></span></div>`,
                         () => {
-                            const element = editor.getDocument().getElementById(TEST_ELEMENT_ID)
+                            const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID)
                                 .firstChild;
                             const range = new Range();
                             range.setStart(element, 0);
@@ -324,7 +324,7 @@ describe('Text Features |', () => {
                         TextFeatures.indentWhenTabText,
                         `<div id='${TEST_ELEMENT_ID}'>Test<span><b></b></span><span></span></div>`,
                         () => {
-                            const element = editor.getDocument().getElementById(TEST_ELEMENT_ID)
+                            const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID)
                                 .firstChild;
                             const range = new Range();
                             range.setStart(element, 0);
@@ -343,7 +343,7 @@ describe('Text Features |', () => {
                         TextFeatures.indentWhenTabText,
                         `<div id='${TEST_ELEMENT_ID}'>Test<span><b></b></span><i></i><span></span></div>`,
                         () => {
-                            const element = editor.getDocument().getElementById(TEST_ELEMENT_ID)
+                            const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID)
                                 .firstChild;
                             const range = new Range();
                             range.setStart(element, 0);
@@ -362,7 +362,7 @@ describe('Text Features |', () => {
                         TextFeatures.indentWhenTabText,
                         `<div id='${TEST_ELEMENT_ID}'>Test<span><b><i><u></u></i></b></span><span><b><i><u></u></i></b></span></div>`,
                         () => {
-                            const element = editor.getDocument().getElementById(TEST_ELEMENT_ID)
+                            const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID)
                                 .firstChild;
                             const range = new Range();
                             range.setStart(element, 0);
@@ -381,7 +381,7 @@ describe('Text Features |', () => {
                         TextFeatures.indentWhenTabText,
                         `<div><span id='${TEST_ELEMENT_ID}2'>Test</span></div><div><span id='${TEST_ELEMENT_ID}'>Test</span></div>`,
                         () => {
-                            const element = editor.getDocument().getElementById(TEST_ELEMENT_ID);
+                            const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID);
                             const element2 = editor
                                 .getDocument()
                                 .getElementById(TEST_ELEMENT_ID + '2');
@@ -402,7 +402,7 @@ describe('Text Features |', () => {
                         TextFeatures.indentWhenTabText,
                         `<div><span id='${TEST_ELEMENT_ID}'>Test</span></div>`,
                         () => {
-                            const element = editor.getDocument().getElementById(TEST_ELEMENT_ID);
+                            const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID);
                             const range = new Range();
                             range.setStart(element.firstChild, 1);
                             range.setEnd(element.firstChild, 3);
@@ -418,7 +418,7 @@ describe('Text Features |', () => {
                     TextFeatures.indentWhenTabText,
                     `<div id='${TEST_ELEMENT_ID}'>Test<a href='test'>TestAnchor</a></div>`,
                     () => {
-                        const element = editor.getDocument().getElementById(TEST_ELEMENT_ID);
+                        const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID);
                         const range = new Range();
                         range.setStart(element, 1);
                         range.setEnd(element, 1);
@@ -428,7 +428,7 @@ describe('Text Features |', () => {
                     () => {
                         const range = editor.getSelectionRange();
 
-                        const element = editor.getDocument().getElementById(TEST_ELEMENT_ID);
+                        const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID);
                         const expectedRange = new Range();
                         expectedRange.setStart(element, 2);
                         expect(range).toEqual(expectedRange);
@@ -445,8 +445,8 @@ describe('Text Features |', () => {
                     TextFeatures.outdentWhenTabText,
                     '<div><blockquote><p id="p1" style="margin:0px 0px 15px;text-align:justify;font-family:&quot;Open Sans&quot;, Arial, sans-serif;font-size:14px;background-color:rgb(255, 255, 255)">Lorem ipsum dolort.</p><p id="p2" style="margin:0px 0px 15px;text-align:justify;font-family:&quot;Open Sans&quot;, Arial, sans-serif;font-size:14px;background-color:rgb(255, 255, 255)">Nullam molestie iaculis .</p></blockquote><br></div>',
                     () => {
-                        const p1 = editor.getDocument().getElementById('p1');
-                        const p2 = editor.getDocument().getElementById('p2');
+                        const p1 = editor.getEditorHost().getElementById('p1');
+                        const p2 = editor.getEditorHost().getElementById('p2');
                         const range = new Range();
                         range.setStart(p1.firstChild, 0);
                         range.setEnd(p2.firstChild, 25);
@@ -462,8 +462,8 @@ describe('Text Features |', () => {
                     TextFeatures.outdentWhenTabText,
                     '<div><p id="p1" style="margin:0px 0px 15px;text-align:justify;font-family:&quot;Open Sans&quot;, Arial, sans-serif;font-size:14px;background-color:rgb(255, 255, 255)">Lorem ipsum dolort.</p><p id="p2" style="margin:0px 0px 15px;text-align:justify;font-family:&quot;Open Sans&quot;, Arial, sans-serif;font-size:14px;background-color:rgb(255, 255, 255)">Nullam molestie iaculis .</p><br></div>',
                     () => {
-                        const p1 = editor.getDocument().getElementById('p1');
-                        const p2 = editor.getDocument().getElementById('p2');
+                        const p1 = editor.getEditorHost().getElementById('p1');
+                        const p2 = editor.getEditorHost().getElementById('p2');
                         const range = new Range();
                         range.setStart(p1.firstChild, 0);
                         range.setEnd(p2.firstChild, 25);
@@ -480,7 +480,7 @@ describe('Text Features |', () => {
                     TextFeatures.outdentWhenTabText,
                     '<div><p id="p1" style="margin:0px 0px 15px;text-align:justify;font-family:&quot;Open Sans&quot;, Arial, sans-serif;font-size:14px;background-color:rgb(255, 255, 255)">Lorem ipsum dolort.</p><p id="p2" style="margin:0px 0px 15px;text-align:justify;font-family:&quot;Open Sans&quot;, Arial, sans-serif;font-size:14px;background-color:rgb(255, 255, 255)">Nullam molestie iaculis .</p><br></div>',
                     () => {
-                        const element = editor.getDocument().getElementById('p1');
+                        const element = editor.getEditorHost().getElementById('p1');
                         const range = new Range();
                         range.setStart(element, 0);
                         editor.select(range);
@@ -494,8 +494,8 @@ describe('Text Features |', () => {
                     TextFeatures.outdentWhenTabText,
                     '<div><p id="p1" style="margin:0px 0px 15px;text-align:justify;font-family:&quot;Open Sans&quot;, Arial, sans-serif;font-size:14px;background-color:rgb(255, 255, 255)">Lorem ipsum dolort.</p><p id="p2" style="margin:0px 0px 15px;text-align:justify;font-family:&quot;Open Sans&quot;, Arial, sans-serif;font-size:14px;background-color:rgb(255, 255, 255)">Nullam molestie iaculis .</p><br></div>',
                     () => {
-                        const p1 = editor.getDocument().getElementById('p1');
-                        const p2 = editor.getDocument().getElementById('p2');
+                        const p1 = editor.getEditorHost().getElementById('p1');
+                        const p2 = editor.getEditorHost().getElementById('p2');
                         const range = new Range();
                         range.setStart(p1.firstChild, 0);
                         range.setEnd(p2.firstChild, 24);
@@ -512,8 +512,8 @@ describe('Text Features |', () => {
                     TextFeatures.outdentWhenTabText,
                     '<div><blockquote><p id="p1" style="margin:0px 0px 15px;text-align:justify;font-family:&quot;Open Sans&quot;, Arial, sans-serif;font-size:14px;background-color:rgb(255, 255, 255)">Lorem ipsum dolort.</p><p id="p2" style="margin:0px 0px 15px;text-align:justify;font-family:&quot;Open Sans&quot;, Arial, sans-serif;font-size:14px;background-color:rgb(255, 255, 255)">Nullam molestie iaculis .</p></blockquote><br></div>',
                     () => {
-                        const p1 = editor.getDocument().getElementById('p1');
-                        const p2 = editor.getDocument().getElementById('p2');
+                        const p1 = editor.getEditorHost().getElementById('p1');
+                        const p2 = editor.getEditorHost().getElementById('p2');
                         const range = new Range();
                         range.setStart(p1.firstChild, 0);
                         range.setEnd(p2.firstChild, 25);

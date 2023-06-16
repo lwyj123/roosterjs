@@ -28,7 +28,7 @@ function insertImageWithSrc(editor: IEditor, src: string, attributes?: Record<st
     formatUndoSnapshot(
         editor,
         () => {
-            const image = editor.getDocument().createElement('img');
+            const image = editor.getEditorHost().createElement('img');
             image.src = src;
 
             if (attributes) {

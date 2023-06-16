@@ -35,7 +35,7 @@ const InsertLineBeforeStructuredNodeFeature: BuildInEditFeature<PluginKeyboardEv
         let element = cacheGetStructuredElement(event, editor);
         let div = createElement(
             KnownCreateElementDataIndex.EmptyLine,
-            editor.getDocument()
+            editor.getEditorHost()
         ) as HTMLElement;
         editor.addUndoSnapshot(() => {
             element?.parentNode?.insertBefore(div, element);

@@ -105,7 +105,7 @@ function createBeforePasteEvent(
     return {
         eventType: PluginEventType.BeforePaste,
         clipboardData,
-        fragment: editor.getDocument().createDocumentFragment(),
+        fragment: editor.getEditorHost().createDocumentFragment(),
         sanitizingOption: options,
         htmlBefore: '',
         htmlAfter: '',

@@ -24,7 +24,7 @@ export const changeImageButton: RibbonButton<'buttonNameChangeImage'> = {
     isDisabled: formatState => !formatState.canAddImageAltText,
     onClick: editor => {
         if (isContentModelEditor(editor)) {
-            const document = editor.getDocument();
+            const document = editor.getEditorHost();
             const fileInput = createElement(FileInput, document) as HTMLInputElement;
             document.body.appendChild(fileInput);
 

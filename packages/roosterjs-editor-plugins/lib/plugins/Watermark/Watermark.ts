@@ -112,7 +112,7 @@ export default class Watermark implements EditorPlugin {
             const newEntity = insertEntity(
                 this.editor,
                 ENTITY_TYPE,
-                this.editor.getDocument().createTextNode(this.watermark),
+                this.editor.getEditorHost().createTextNode(this.watermark),
                 false /*isBlock*/,
                 false /*isReadonly*/,
                 ContentPosition.Begin
@@ -134,7 +134,7 @@ export default class Watermark implements EditorPlugin {
             getTagOfNode(parentNode) == 'DIV' &&
             !parentNode.firstChild
         ) {
-            parentNode.appendChild(this.editor.getDocument().createElement('BR'));
+            parentNode.appendChild(this.editor.getEditorHost().createElement('BR'));
         }
     };
 }

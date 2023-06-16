@@ -112,7 +112,7 @@ function handleMarkdownEvent(
                 );
 
                 const text = textContentRange.extractContents().textContent;
-                const textNode = editor.getDocument().createTextNode(text ?? '');
+                const textNode = editor.getEditorHost().createTextNode(text ?? '');
 
                 // extract content and put it into a new element.
                 const elementToWrap = wrap(textNode, elementTag);

@@ -38,7 +38,7 @@ const IndentWhenTabText: BuildInEditFeature<PluginKeyboardEvent> = {
             editor.isFeatureEnabled(ExperimentalFeatures.TabKeyTextFeatures) &&
             !event.rawEvent.shiftKey
         ) {
-            let activeElement = editor.getDocument().activeElement as HTMLElement;
+            let activeElement = editor.getEditorHost().activeElement as HTMLElement;
             const listOrTable = editor.getElementAtCursor(
                 'LI,TABLE',
                 undefined /*startFrom*/,
@@ -186,7 +186,7 @@ function isRangeEmpty(range: Range) {
 }
 
 function insertTab(editor: IEditor, event: PluginKeyboardEvent) {
-    const span = editor.getDocument().createElement('span');
+    const span = editor.getEditorHost().createElement('span');
     let searcher = editor.getContentSearcherOfCursor(event);
     if (!searcher) {
         return;
@@ -201,7 +201,7 @@ function insertTab(editor: IEditor, event: PluginKeyboardEvent) {
     }
     editor.insertNode(span);
     if (span.nextElementSibling && getTagOfNode(span.nextElementSibling) == 'A') {
-        span2 = editor.getDocument().createElement('span');
+        span2 = editor.getEditorHost().createElement('span');
         span2.textContent = ' ';
         editor.insertNode(span2);
         editor.select(createRange(span2, PositionType.Before));

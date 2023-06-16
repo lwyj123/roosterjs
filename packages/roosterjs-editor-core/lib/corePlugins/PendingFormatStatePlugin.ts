@@ -143,7 +143,7 @@ export default class PendingFormatStatePlugin
 
         if (!span && this.editor) {
             const currentStyle = this.editor.getStyleBasedFormatState();
-            const doc = this.editor.getDocument();
+            const doc = this.editor.getEditorHost();
             const isDarkMode = this.editor.isDarkMode();
 
             span = doc.createElement('span');

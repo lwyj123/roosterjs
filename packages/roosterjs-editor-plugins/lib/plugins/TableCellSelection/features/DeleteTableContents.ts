@@ -35,5 +35,5 @@ function deleteNodeContents(element: HTMLElement, editor: IEditor) {
     const range = new Range();
     range.selectNodeContents(element);
     range.deleteContents();
-    element.appendChild(editor.getDocument().createElement('br'));
+    element.appendChild(editor.getEditorHost().createElement('br'));
 }

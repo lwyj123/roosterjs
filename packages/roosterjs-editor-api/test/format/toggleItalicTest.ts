@@ -19,7 +19,7 @@ describe('toggleItalic()', () => {
     });
 
     it('triggers the italic command in document', () => {
-        let document = editor.getDocument();
+        let document = editor.getEditorHost();
         spyOn(document, 'execCommand').and.callThrough();
 
         toggleItalic(editor);

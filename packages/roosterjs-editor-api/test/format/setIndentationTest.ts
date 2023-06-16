@@ -37,7 +37,7 @@ describe('setIndentation()', () => {
             '<div><ol><li><span id="test">Text</span></li></ol></div>',
             () => {
                 const range = new Range();
-                range.setStart(editor.getDocument().getElementById('test'), 0);
+                range.setStart(editor.getEditorHost().getElementById('test'), 0);
                 editor.select(range);
             },
             Indentation.Increase,
@@ -50,7 +50,7 @@ describe('setIndentation()', () => {
             '<div><blockquote style="margin-top:0;margin-bottom:0"><ol style="list-style-position: inside;"><li><span id="test">Text</span></li></ol></blockquote></div>',
             () => {
                 const range = new Range();
-                range.setStart(editor.getDocument().getElementById('test'), 0);
+                range.setStart(editor.getEditorHost().getElementById('test'), 0);
                 editor.select(range);
             },
             Indentation.Decrease,
@@ -62,7 +62,7 @@ describe('setIndentation()', () => {
         runTest(
             '<table id="test"><tbody><tr><td><br></td><td><br></td></tr><tr><td><br></td><td><br></td></tr></tbody></table>',
             () => {
-                const table = editor.getDocument().getElementById('test') as HTMLTableElement;
+                const table = editor.getEditorHost().getElementById('test') as HTMLTableElement;
                 editor.select(table, <TableSelection>{
                     firstCell: { x: 0, y: 0 },
                     lastCell: { y: 1, x: 1 },
@@ -77,7 +77,7 @@ describe('setIndentation()', () => {
         runTest(
             '<table id="test"><tbody><tr><td><br></td><td><br></td></tr><tr><td><br></td><td><br></td></tr></tbody></table>',
             () => {
-                const table = editor.getDocument().getElementById('test') as HTMLTableElement;
+                const table = editor.getEditorHost().getElementById('test') as HTMLTableElement;
                 editor.select(table, <TableSelection>{
                     firstCell: { x: 0, y: 0 },
                     lastCell: { y: 1, x: 1 },
@@ -92,7 +92,7 @@ describe('setIndentation()', () => {
         runTest(
             '<blockquote style="margin-top:0;margin-bottom:0"><table id="test"><tbody><tr><td><br></td><td><br></td></tr><tr><td><br></td><td><br></td></tr></tbody></table></blockquote>',
             () => {
-                const table = editor.getDocument().getElementById('test') as HTMLTableElement;
+                const table = editor.getEditorHost().getElementById('test') as HTMLTableElement;
                 editor.select(table, <TableSelection>{
                     firstCell: { x: 0, y: 0 },
                     lastCell: { y: 1, x: 1 },

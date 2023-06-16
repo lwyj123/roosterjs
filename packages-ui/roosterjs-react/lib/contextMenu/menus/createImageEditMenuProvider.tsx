@@ -169,7 +169,7 @@ const ImageCopyMenuItem: ContextMenuItem<ImageEditMenuItemStringKey, ImageEdit> 
     onClick: (_, editor, node, strings, uiUtilities, imageEdit) => {
         if (editor.contains(node)) {
             editor.addUndoSnapshot(() => {
-                editor.getDocument()?.execCommand(DocumentCommand.Copy);
+                editor.getEditorHost()?.execCommand(DocumentCommand.Copy);
             }, 'CopyImage');
         }
     },
@@ -181,7 +181,7 @@ const ImageCutMenuItem: ContextMenuItem<ImageEditMenuItemStringKey, ImageEdit> =
     onClick: (_, editor, node, strings, uiUtilities, imageEdit) => {
         if (editor.contains(node)) {
             editor.addUndoSnapshot(() => {
-                editor.getDocument()?.execCommand(DocumentCommand.Cut);
+                editor.getEditorHost()?.execCommand(DocumentCommand.Cut);
             }, 'CutImage');
         }
     },

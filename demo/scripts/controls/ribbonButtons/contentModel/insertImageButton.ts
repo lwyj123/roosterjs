@@ -23,7 +23,7 @@ export const insertImageButton: RibbonButton<InsertImageButtonStringKey> = {
     iconName: 'Photo2',
     onClick: editor => {
         if (isContentModelEditor(editor)) {
-            const document = editor.getDocument();
+            const document = editor.getEditorHost();
             const fileInput = createElement(FileInput, document) as HTMLInputElement;
             document.body.appendChild(fileInput);
 

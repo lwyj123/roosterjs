@@ -288,7 +288,7 @@ describe('TableCellSelectionPlugin |', () => {
             );
             spyOn(TableCellSelectionFile, 'selectionInsideTableMouseMove').and.callThrough();
 
-            const container = editor.getDocument().getElementById('container');
+            const container = editor.getEditorHost().getElementById('container');
             simulateMouseEvent('mousedown', container);
             container.querySelectorAll('p').forEach(p => {
                 simulateMouseEvent('mousemove', p);
@@ -647,7 +647,7 @@ describe('TableCellSelectionPlugin |', () => {
             `<div><table id='table1' cellspacing="0" cellpadding="1"><tbody><tr ><td id=${targetId} >Test string<br></td><td >Test string<br></td><td >Test string<br></td><td >Test string<br></td></tr><tr ><td >Test string<br></td><td >Test string<br></td><td >Test string<br></td><td  >Test string<br></td></tr><tr ><td >Test string<br></td><td >Test string<br></td><td id=${targetId2} >Test string<br></td><td >Test string<br></td></tr><tr ><td >Test string<br></td><td >Test string<br></td><td >Test string<br></td><td >`
         );
 
-        const table = editor.getDocument().getElementById('table1') as HTMLTableElement;
+        const table = editor.getEditorHost().getElementById('table1') as HTMLTableElement;
 
         editor.select(table, {
             firstCell: { x: 0, y: 0 },

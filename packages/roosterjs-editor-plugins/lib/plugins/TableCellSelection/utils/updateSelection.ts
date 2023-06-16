@@ -13,7 +13,7 @@ export function updateSelection(
     end?: Node,
     endOffset?: number
 ) {
-    const selection = editor.getDocument().defaultView?.getSelection();
+    const selection = editor.getEditorHost().defaultView?.getSelection();
     if (selection) {
         end = end || start;
         endOffset = endOffset || offset;

@@ -18,7 +18,7 @@ export default function insertTable(
     rows: number,
     format?: TableFormat
 ) {
-    let document = editor.getDocument();
+    let document = editor.getEditorHost();
     let table = document.createElement('table') as HTMLTableElement;
     table.cellSpacing = '0';
     table.cellPadding = '1';

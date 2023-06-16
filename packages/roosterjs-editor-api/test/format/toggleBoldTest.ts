@@ -19,7 +19,7 @@ describe('toggleBold()', () => {
     });
 
     it('triggers the bold command in document', () => {
-        let document = editor.getDocument();
+        let document = editor.getEditorHost();
         spyOn(document, 'execCommand').and.callThrough();
 
         toggleBold(editor);

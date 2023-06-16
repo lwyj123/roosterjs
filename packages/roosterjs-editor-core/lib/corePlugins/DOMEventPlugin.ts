@@ -61,7 +61,7 @@ export default class DOMEventPlugin implements PluginWithState<DOMEventPluginSta
     initialize(editor: IEditor) {
         this.editor = editor;
 
-        const document = this.editor.getDocument();
+        const document = this.editor.getEditorHost();
         //Record<string, DOMEventHandler>
         const eventHandlers: Partial<
             { [P in keyof HTMLElementEventMap]: DOMEventHandler<HTMLElementEventMap[P]> }

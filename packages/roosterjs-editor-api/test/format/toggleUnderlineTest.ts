@@ -18,7 +18,7 @@ describe('toggleUnderline()', () => {
     });
 
     it('triggers the underline command in document', () => {
-        let document = editor.getDocument();
+        let document = editor.getEditorHost();
         spyOn(document, 'execCommand').and.callThrough();
 
         toggleUnderline(editor);

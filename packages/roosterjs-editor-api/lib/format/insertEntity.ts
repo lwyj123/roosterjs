@@ -128,7 +128,10 @@ export default function insertEntity(
     if (isBlock) {
         // Insert an extra empty line for block entity to make sure
         // user can still put cursor below the entity.
-        const newLine = createElement(KnownCreateElementDataIndex.EmptyLine, editor.getDocument());
+        const newLine = createElement(
+            KnownCreateElementDataIndex.EmptyLine,
+            editor.getEditorHost()
+        );
 
         wrapper.parentNode?.insertBefore(newLine!, wrapper.nextSibling);
 

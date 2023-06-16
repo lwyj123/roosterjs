@@ -19,7 +19,7 @@ describe('clearFormat()', () => {
     });
 
     it('triggers the removeformat command in document', () => {
-        let document = editor.getDocument();
+        let document = editor.getEditorHost();
         spyOn(editor, 'addUndoSnapshot').and.callThrough();
         spyOn(document, 'execCommand').and.callThrough();
 
@@ -134,7 +134,7 @@ describe('clearAutodetectFormat tests', () => {
     let doc: Document;
     beforeEach(() => {
         editor = TestHelper.initEditor(TEST_ID, undefined, undefined, {});
-        doc = editor.getDocument();
+        doc = editor.getEditorHost();
         doc.getSelection().removeAllRanges();
     });
 
@@ -267,7 +267,7 @@ describe('clearAutodetectFormat Partial Tests', () => {
     let doc: Document;
     beforeEach(() => {
         editor = TestHelper.initEditor(TEST_ID, undefined, undefined);
-        doc = editor.getDocument();
+        doc = editor.getEditorHost();
         doc.getSelection().removeAllRanges();
     });
 
@@ -335,7 +335,7 @@ describe('clearAutodetectFormat tests with defaultFormat | ', () => {
             fontSize: '12pt',
             bold: true,
         });
-        doc = editor.getDocument();
+        doc = editor.getEditorHost();
         doc.getSelection().removeAllRanges();
     });
 

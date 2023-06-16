@@ -359,7 +359,7 @@ export default class PickerPlugin<T extends PickerDataProvider = PickerDataProvi
                         if (this.dataProvider.setCursorPoint) {
                             // Determine the bounding rectangle for the @mention
                             let searcher = this.editor.getContentSearcherOfCursor(event);
-                            let rangeNode = this.editor.getDocument().createRange();
+                            let rangeNode = this.editor.getEditorHost().createRange();
 
                             if (rangeNode) {
                                 let nodeBeforeCursor =
