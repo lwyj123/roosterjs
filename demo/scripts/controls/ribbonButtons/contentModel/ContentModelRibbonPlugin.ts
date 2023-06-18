@@ -131,7 +131,7 @@ export class ContentModelRibbonPlugin implements RibbonPlugin {
     }
 
     private delayUpdate() {
-        const window = this.editor?.getDocument().defaultView;
+        const window = this.editor?.getEditorHost().defaultView;
 
         if (!window) {
             return;

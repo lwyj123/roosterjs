@@ -224,7 +224,7 @@ function adjustInsertPositionRegionRoot(core: EditorCore, range: Range, position
 function adjustInsertPositionNewLine(blockElement: BlockElement, core: EditorCore, pos: Position) {
     let tempPos = new Position(blockElement.getEndNode(), PositionType.After);
     if (safeInstanceOf(tempPos.node, 'HTMLTableRowElement')) {
-        const div = core.contentDiv.ownerDocument.createElement('div');
+        const div = core.host.createElement('div');
         const range = createRange(pos);
         range.insertNode(div);
         tempPos = new Position(div, PositionType.Begin);

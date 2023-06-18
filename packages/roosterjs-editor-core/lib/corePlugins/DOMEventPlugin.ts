@@ -61,7 +61,7 @@ export default class DOMEventPlugin implements PluginWithState<DOMEventPluginSta
     initialize(editor: IEditor) {
         this.editor = editor;
 
-        const document = this.editor.getEditorHost();
+        const host = this.editor.getEditorHost();
         //Record<string, DOMEventHandler>
         const eventHandlers: Partial<
             { [P in keyof HTMLElementEventMap]: DOMEventHandler<HTMLElementEventMap[P]> }
@@ -96,9 +96,9 @@ export default class DOMEventPlugin implements PluginWithState<DOMEventPluginSta
 
         // 7. onBlur handlers
         if (Browser.isSafari) {
-            document.addEventListener('mousedown', this.onMouseDownDocument, true /*useCapture*/);
-            document.addEventListener('keydown', this.onKeyDownDocument);
-            document.defaultView?.addEventListener('blur', this.cacheSelection);
+            host.addEventListener('mousedown', this.onMouseDownDocument, true /*useCapture*/);
+            host.addEventListener('keydown', this.onKeyDownDocument);
+            host.defaultView?.addEventListener('blur', this.cacheSelection);
         } else if (Browser.isIEOrEdge) {
             type EventHandlersIE = {
                 beforedeactivate: DOMEventHandler<HTMLElementEventMap['blur']>;
@@ -112,27 +112,23 @@ export default class DOMEventPlugin implements PluginWithState<DOMEventPluginSta
 
         // 8. Scroll event
         this.state.scrollContainer.addEventListener('scroll', this.onScroll);
-        document.defaultView?.addEventListener('scroll', this.onScroll);
-        document.defaultView?.addEventListener('resize', this.onScroll);
+        host.defaultView?.addEventListener('scroll', this.onScroll);
+        host.defaultView?.addEventListener('resize', this.onScroll);
     }
 
     /**
      * Dispose this plugin
      */
     dispose() {
-        const document = this.editor?.getDocument();
-        if (document && Browser.isSafari) {
-            document.removeEventListener(
-                'mousedown',
-                this.onMouseDownDocument,
-                true /*useCapture*/
-            );
-            document.removeEventListener('keydown', this.onKeyDownDocument);
-            document.defaultView?.removeEventListener('blur', this.cacheSelection);
+        const host = this.editor?.getEditorHost();
+        if (host && Browser.isSafari) {
+            host.removeEventListener('mousedown', this.onMouseDownDocument, true /*useCapture*/);
+            host.removeEventListener('keydown', this.onKeyDownDocument);
+            host.defaultView?.removeEventListener('blur', this.cacheSelection);
         }
 
-        document?.defaultView?.removeEventListener('resize', this.onScroll);
-        document?.defaultView?.removeEventListener('scroll', this.onScroll);
+        host?.defaultView?.removeEventListener('resize', this.onScroll);
+        host?.defaultView?.removeEventListener('scroll', this.onScroll);
         this.state.scrollContainer.removeEventListener('scroll', this.onScroll);
         this.disposer?.();
         this.disposer = null;
@@ -166,13 +162,13 @@ export default class DOMEventPlugin implements PluginWithState<DOMEventPluginSta
 
         this.state.selectionRange = null;
     };
-    private onKeyDownDocument = (event: KeyboardEvent) => {
+    private onKeyDownDocument = (event: KeyboardEvent): void => {
         if (event.which == Keys.TAB && !event.defaultPrevented) {
             this.cacheSelection();
         }
     };
 
-    private onMouseDownDocument = (event: MouseEvent) => {
+    private onMouseDownDocument = (event: MouseEvent): void => {
         if (
             this.editor &&
             !this.state.selectionRange &&

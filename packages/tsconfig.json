@@ -18,7 +18,8 @@
         },
         "rootDir": ".",
         "composite": true,
-        "lib": ["es6", "dom"]
+        "lib": ["es6", "dom"],
+        "types": []
     },
 
     "references": [

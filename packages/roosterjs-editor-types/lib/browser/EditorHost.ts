@@ -10,7 +10,7 @@ export default interface EditorHost {
     /**
      * Get shadow root of editor if editor is under shadow DOM
      */
-    readonly shadowRoot: ShadowRoot;
+    readonly shadowRoot: ShadowRoot | null;
 
     dispose(): void;
 
@@ -122,6 +122,15 @@ export default interface EditorHost {
      * @param style The style element to append
      */
     appendStyleElement(style: HTMLStyleElement): void;
+
+    querySelector<K extends keyof HTMLElementTagNameMap>(
+        selectors: K
+    ): HTMLElementTagNameMap[K] | null;
+    querySelector<K extends keyof SVGElementTagNameMap>(
+        selectors: K
+    ): SVGElementTagNameMap[K] | null;
+    // querySelector<K extends keyof MathMLElementTagNameMap>(selectors: K): MathMLElementTagNameMap[K] | null;
+    querySelector<E extends Element = Element>(selectors: string): E | null;
 
     /**
      * Get window of editor

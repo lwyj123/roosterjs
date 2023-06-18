@@ -27,7 +27,7 @@ export default class ContentModelPanePlugin extends SidePanePluginImpl<
     dispose(): void {
         this.contentModelRibbon.dispose();
         this.editor
-            .getDocument()
+            .getEditorHost()
             .removeEventListener('selectionchange', this.onModelChangeFromSelection);
 
         super.dispose();

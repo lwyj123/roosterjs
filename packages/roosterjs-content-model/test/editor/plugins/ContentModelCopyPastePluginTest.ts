@@ -97,7 +97,7 @@ describe('ContentModelCopyPastePlugin |', () => {
             setContentModel(model: any, option: any) {
                 setContentModelSpy(model, option);
             },
-            getDocument() {
+            getEditorHost() {
                 return document;
             },
             getCustomData<HTMLDivElement>(

@@ -165,7 +165,7 @@ class EmojiPlugin implements ReactEditorPlugin {
             ((event.rawEvent.key.length === 1 && event.rawEvent.which !== KeyCodes.space) ||
                 event.rawEvent.which === KeyCodes.backspace)
         ) {
-            this.editor?.getDocument().defaultView?.clearTimeout(this.timer);
+            this.editor?.getEditorHost().defaultView?.clearTimeout(this.timer);
             this.timer = null;
             this.emojiCalloutRef.current?.dismiss();
         }

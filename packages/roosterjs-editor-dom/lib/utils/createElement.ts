@@ -1,7 +1,7 @@
 import getObjectKeys from '../jsUtils/getObjectKeys';
 import safeInstanceOf from './safeInstanceOf';
 import { Browser } from './Browser';
-import { CreateElementData, KnownCreateElementDataIndex } from 'roosterjs-editor-types';
+import { CreateElementData, EditorHost, KnownCreateElementDataIndex } from 'roosterjs-editor-types';
 import type { CompatibleKnownCreateElementDataIndex } from 'roosterjs-editor-types/lib/compatibleTypes';
 
 /**
@@ -79,7 +79,7 @@ export default function createElement(
         | CreateElementData
         | KnownCreateElementDataIndex
         | CompatibleKnownCreateElementDataIndex,
-    document: Document
+    document: EditorHost | Document
 ): Element | null {
     if (typeof elementData == 'number') {
         elementData = KnownCreateElementData[elementData];

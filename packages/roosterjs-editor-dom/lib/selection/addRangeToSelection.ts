@@ -7,8 +7,15 @@ import { Browser } from '../utils/Browser';
  * otherwise it will always remove current selection range and set to the given one.
  * This parameter is always treat as true in Edge to avoid some weird runtime exception.
  */
-export default function addRangeToSelection(range: Range, skipSameRange?: boolean) {
-    const selection = range?.commonAncestorContainer?.ownerDocument?.defaultView?.getSelection();
+export default function addRangeToSelection(
+    range: Range,
+    skipSameRange?: boolean,
+    selection?: Selection
+) {
+    selection =
+        selection ||
+        range?.commonAncestorContainer?.ownerDocument?.defaultView?.getSelection() ||
+        undefined;
     if (selection) {
         let needAddRange = true;
 

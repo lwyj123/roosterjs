@@ -122,7 +122,7 @@ function handleMarkdownEvent(
 
                 // ZWS here ensures we don't end up inside the newly created node.
                 const nonPrintedSpaceTextNode = editor
-                    .getDocument()
+                    .getEditorHost()
                     .createTextNode(ZERO_WIDTH_SPACE);
                 range.insertNode(nonPrintedSpaceTextNode);
                 range.insertNode(elementToWrap);

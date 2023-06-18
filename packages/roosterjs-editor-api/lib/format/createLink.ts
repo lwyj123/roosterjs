@@ -93,7 +93,7 @@ export default function createLink(
                 } else {
                     // the selection is not collapsed, use browser execCommand
                     editor
-                        .getDocument()
+                        .getEditorHost()
                         .execCommand(DocumentCommand.CreateLink, false, normalizedUrl);
                     const traverser = editor.getSelectionTraverser();
 

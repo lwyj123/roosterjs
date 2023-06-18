@@ -57,7 +57,7 @@ export default class GetSelectionPane extends React.Component<ApiPaneProps, Sele
         if (queryInfo) {
             if (this.state.isImageSelectionOption) {
                 const elementToSelect = this.editor
-                    .getDocument()
+                    .getEditorHost()
                     .querySelector(`img[id$="${queryInfo}"]`);
                 const select = elementToSelect ? this.editor.select(elementToSelect) : null;
                 this.setState({
@@ -66,8 +66,9 @@ export default class GetSelectionPane extends React.Component<ApiPaneProps, Sele
                 });
             } else {
                 const elementToSelect = this.editor
-                    .getDocument()
+                    .getEditorHost()
                     .querySelector(`table[id$="${queryInfo}"]`) as HTMLTableElement;
+
                 const coordinates = this.getCoordinates();
                 const select =
                     elementToSelect && coordinates

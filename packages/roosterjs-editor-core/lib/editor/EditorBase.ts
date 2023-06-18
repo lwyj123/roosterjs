@@ -11,6 +11,7 @@ import {
     DefaultFormat,
     DOMEventHandler,
     EditorCore,
+    EditorHost,
     EditorOptions,
     EditorUndoState,
     ExperimentalFeatures,
@@ -290,7 +291,7 @@ export class EditorBase<TEditorCore extends EditorCore, TEditorOptions extends E
      */
     public insertContent(content: string, option?: InsertOption) {
         if (content) {
-            const doc = this.getDocument();
+            const doc = this.getEditorHost();
             const body = new DOMParser().parseFromString(
                 this.getCore().trustedHTMLHandler(content),
                 'text/html'
@@ -437,7 +438,7 @@ export class EditorBase<TEditorCore extends EditorCore, TEditorOptions extends E
      * Get current focused position. Return null if editor doesn't have focus at this time.
      */
     public getFocusedPosition(): NodePosition | null {
-        let sel = this.getDocument().defaultView?.getSelection();
+        let sel = this.getEditorHost().defaultView?.getSelection();
         if (sel?.focusNode && this.contains(sel.focusNode)) {
             return new Position(sel.focusNode, sel.focusOffset);
         }
@@ -626,11 +627,20 @@ export class EditorBase<TEditorCore extends EditorCore, TEditorOptions extends E
     //#region Misc
 
     /**
+     * @deprecated Use EditorBase.getEditorHost() instead
      * Get document which contains this editor
      * @returns The HTML document which contains this editor
      */
     public getDocument(): Document {
         return this.getCore().contentDiv.ownerDocument;
+    }
+
+    /**
+     * Get the host object of editor. In most time we can use EditorHost instead of a document
+     * @returns The HTML document which contains this editor
+     */
+    public getEditorHost(): EditorHost {
+        return this.getCore().host;
     }
 
     /**

@@ -63,7 +63,7 @@ function createBeforePasteEvent(
     return {
         eventType: PluginEventType.BeforePaste,
         clipboardData,
-        fragment: core.contentDiv.ownerDocument.createDocumentFragment(),
+        fragment: core.host.createDocumentFragment(),
         sanitizingOption: options,
         htmlBefore: '',
         htmlAfter: '',

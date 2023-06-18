@@ -17,8 +17,9 @@ import TitleBar from './titleBar/TitleBar';
 import { arrayPush } from 'roosterjs-editor-dom';
 import { ContentModelEditor } from 'roosterjs-content-model';
 import { ContentModelRibbonPlugin } from './ribbonButtons/contentModel/ContentModelRibbonPlugin';
+import { createElement } from 'roosterjs-editor-dom';
 import { darkMode, DarkModeButtonStringKey } from './ribbonButtons/darkMode';
-import { EditorOptions, EditorPlugin } from 'roosterjs-editor-types';
+import { CreateElementData, EditorOptions, EditorPlugin } from 'roosterjs-editor-types';
 import { ExportButtonStringKey, exportContent } from './ribbonButtons/export';
 import { getDarkColor } from 'roosterjs-color-utils';
 import { PartialTheme, ThemeProvider } from '@fluentui/react/lib/Theme';
@@ -49,6 +50,13 @@ const POPOUT_HTML = `<!doctype html><html><head><title>RoosterJs Demo Site</titl
 const POPOUT_FEATURES = 'menubar=no,statusbar=no,width=1200,height=800';
 const POPOUT_URL = 'about:blank';
 const POPOUT_TARGET = '_blank';
+const EDITOR_DIV_DATA: CreateElementData = {
+    tag: 'div',
+    attributes: {
+        tabIndex: '0',
+    },
+    style: 'width:100%;height:100%;outline:none',
+};
 
 const LightTheme: PartialTheme = {
     palette: {
@@ -170,6 +178,7 @@ class MainPane extends MainPaneBase {
             editorCreator: null,
             isRtl: false,
             showContentModelRibbon: false,
+            useShadowDOM: false,
         };
     }
 
@@ -263,6 +272,13 @@ class MainPane extends MainPaneBase {
             isDarkMode: this.themeMatch?.matches || false,
         });
     };
+
+    setUseShadowDOM(useShadowDOM: boolean): void {
+        this.setState({
+            useShadowDOM,
+        });
+        this.resetEditor();
+    }
 
     private onMouseDown = (e: React.MouseEvent<EventTarget>) => {
         document.addEventListener('mousemove', this.onMouseMove, true);
@@ -457,8 +473,21 @@ class MainPane extends MainPaneBase {
     private resetEditor() {
         this.toggleablePlugins = null;
         this.setState({
-            editorCreator: (div: HTMLDivElement, options: EditorOptions) =>
-                new ContentModelEditor(div, options),
+            editorCreator: (div: HTMLDivElement, options: EditorOptions) => {
+                let editorDiv = createElement(EDITOR_DIV_DATA, div.ownerDocument) as HTMLDivElement;
+                while (div.firstChild) {
+                    div.removeChild(div.firstChild);
+                }
+                div.appendChild(editorDiv);
+
+                if (this.state.useShadowDOM) {
+                    const shadowRoot = editorDiv.attachShadow({ mode: 'closed' });
+                    editorDiv = createElement(EDITOR_DIV_DATA, div.ownerDocument) as HTMLDivElement;
+                    shadowRoot.appendChild(editorDiv);
+                }
+
+                return new ContentModelEditor(editorDiv, options);
+            },
         });
     }
 }

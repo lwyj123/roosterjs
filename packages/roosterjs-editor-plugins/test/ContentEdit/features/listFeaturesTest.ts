@@ -370,7 +370,7 @@ describe('listFeatures | MergeInNewLine', () => {
 
     function runTestHandleEvent(isFirstElement: boolean) {
         const item = editor
-            .getDocument()
+            .getEditorHost()
             .getElementById(isFirstElement ? ITEM_1 : ITEM_2) as HTMLLIElement;
         const range = document.createRange();
         range.setStart(item, 0);

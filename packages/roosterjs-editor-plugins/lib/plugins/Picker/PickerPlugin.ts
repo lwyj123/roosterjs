@@ -295,7 +295,7 @@ export default class PickerPlugin<T extends PickerDataProvider = PickerDataProvi
         });
         return startPos
             ? createRange(startPos, endPos)
-            : this.editor?.getDocument().createRange() ?? null;
+            : this.editor?.getEditorHost().createRange() ?? null;
     }
 
     private shouldHandleKeyUpEvent(event: PluginKeyboardEvent) {

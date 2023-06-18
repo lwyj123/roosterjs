@@ -11,6 +11,7 @@ export interface MainPaneBaseState {
     editorCreator: (div: HTMLDivElement, options: EditorOptions) => IEditor;
     isRtl: boolean;
     showContentModelRibbon: boolean;
+    useShadowDOM: boolean;
 }
 
 export default abstract class MainPaneBase extends React.Component<{}, MainPaneBaseState> {
@@ -39,4 +40,6 @@ export default abstract class MainPaneBase extends React.Component<{}, MainPaneB
     abstract setPageDirection(isRtl: boolean): void;
 
     abstract toggleContentModelRibbon(): void;
+
+    abstract setUseShadowDOM(useShadowDOM: boolean): void;
 }

@@ -383,7 +383,7 @@ describe('Text Features |', () => {
                         () => {
                             const element = editor.getEditorHost().getElementById(TEST_ELEMENT_ID);
                             const element2 = editor
-                                .getDocument()
+                                .getEditorHost()
                                 .getElementById(TEST_ELEMENT_ID + '2');
                             const range = new Range();
                             range.setStart(element2.firstChild, 1);
