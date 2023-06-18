@@ -13,7 +13,6 @@ const buildMjsStep = require('./buildTools/buildMjs');
 const buildCommonJsStep = require('./buildTools/buildCommonJs');
 const pack = require('./buildTools/pack');
 const dts = require('./buildTools/dts');
-const buildDemoStep = require('./buildTools/buildDemo');
 const buildDocumentStep = require('./buildTools/buildDocument');
 const publishStep = require('./buildTools/publish');
 const allTasks = [
@@ -28,15 +27,8 @@ const allTasks = [
     pack.commonJsProduction,
     pack.amdDebug,
     pack.amdProduction,
-    pack.commonJsDebugUi,
-    pack.commonJsProductionUi,
-    pack.amdDebugUi,
-    pack.amdProductionUi,
     dts.dtsCommonJs,
     dts.dtsAmd,
-    dts.dtsCommonJsUi,
-    dts.dtsAmdUi,
-    buildDemoStep,
     buildDocumentStep,
     publishStep,
 ];
@@ -53,7 +45,6 @@ const commands = [
     'pack', // Run webpack to generate standalone .js files
     'packprod', // Run webpack to generate standalone .js files in production mode
     'dts', // Generate type definition files (.d.ts)
-    'builddemo', // Build the demo site
     'builddoc', // Build documents
     'publish', // Publish roosterjs packages to npm
 ];

@@ -19,7 +19,7 @@ async function pack(isProduction, isAmd, isUi, filename) {
             filename,
             path: isUi ? roosterJsUiDistPath : roosterJsDistPath,
             libraryTarget: isAmd ? 'amd' : undefined,
-            library: isAmd ? undefined : isUi ? 'lwyj123-roosterjsReact' : 'lwyj123-roosterjs',
+            library: isAmd ? undefined : 'roosterjs',
         },
         resolve: {
             extensions: ['.ts', '.tsx', '.js'],
@@ -55,7 +55,7 @@ async function pack(isProduction, isAmd, isUi, filename) {
 }
 
 function createStep(isProduction, isAmd, isUi) {
-    const fileName = `rooster${isUi ? '-react' : ''}${isAmd ? '-amd' : ''}${
+    const fileName = `rooster${isAmd ? '-amd' : ''}${
         isProduction ? '-min' : ''
     }.js`;
     return {
@@ -70,8 +70,4 @@ module.exports = {
     commonJsProduction: createStep(true /*isProduction*/, false /*isAmd*/, false /*isUi*/),
     amdDebug: createStep(false /*isProduction*/, true /*isAmd*/, false /*isUi*/),
     amdProduction: createStep(true /*isProduction*/, true /*isAmd*/, false /*isUi*/),
-    commonJsDebugUi: createStep(false /*isProduction*/, false /*isAmd*/, true /*isUi*/),
-    commonJsProductionUi: createStep(true /*isProduction*/, false /*isAmd*/, true /*isUi*/),
-    amdDebugUi: createStep(false /*isProduction*/, true /*isAmd*/, true /*isUi*/),
-    amdProductionUi: createStep(true /*isProduction*/, true /*isAmd*/, true /*isUi*/),
 };
