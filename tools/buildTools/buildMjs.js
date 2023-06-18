@@ -33,7 +33,7 @@ function buildMjs() {
 
     allPackages.forEach(packageName => {
         const packagePath = path.join(distPath, packageName);
-        fs.renameSync(`${packagePath}/lib`, `${packagePath}/lib-mjs`);
+        // fs.renameSync(`${packagePath}/lib`, `${packagePath}/lib-mjs`);
     });
 }
 

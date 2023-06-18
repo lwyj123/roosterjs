@@ -2,6 +2,7 @@ import createCorePlugins, { getPluginState } from '../../lib/corePlugins/createC
 import DarkColorHandlerImpl from '../../lib/editor/DarkColorHandlerImpl';
 import { coreApiMap } from '../../lib/coreApi/coreApiMap';
 import { EditorCore, EditorOptions } from 'roosterjs-editor-types';
+import createEditorHost from '../../lib/editor/createEditorHost';
 
 export default function createMockEditorCore(
     contentDiv: HTMLDivElement,
@@ -21,5 +22,6 @@ export default function createMockEditorCore(
         zoomScale: 1,
         getVisibleViewport: () => contentDiv.getBoundingClientRect(),
         darkColorHandler: new DarkColorHandlerImpl(contentDiv, s => 'darkMock: ' + s),
+        host: createEditorHost(contentDiv),
     };
 }

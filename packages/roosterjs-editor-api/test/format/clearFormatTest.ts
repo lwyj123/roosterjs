@@ -1,7 +1,7 @@
 import * as clearFormatLib from '../../lib/format/clearFormat';
 import * as TestHelper from '../TestHelper';
 import clearFormat from '../../lib/format/clearFormat';
-import { ClearFormatMode, IEditor } from 'roosterjs-editor-types';
+import { ClearFormatMode, IEditor, EditorHost } from 'roosterjs-editor-types';
 
 describe('clearFormat()', () => {
     let testID = 'clearFormat';
@@ -131,7 +131,7 @@ describe('clearAutodetectFormat tests', () => {
 
     const TEST_ID = 'clearAutodetectFormatTest';
     let editor: IEditor;
-    let doc: Document;
+    let doc: EditorHost;
     beforeEach(() => {
         editor = TestHelper.initEditor(TEST_ID, undefined, undefined, {});
         doc = editor.getEditorHost();
@@ -214,7 +214,7 @@ describe('clearAutodetectFormat tests', () => {
                 '<p style="margin:0in 0in 8pt;line-height:107%;font-size:11pt;font-family:Calibri, sans-serif"><span style="font-size: 13.5pt; font-family: &quot;Arial&quot;, sans-serif; color: black;"></span></p><div><p style="margin: 0in 0in 8pt; line-height: 15.6933px; font-size: 11pt; font-family: Calibri, sans-serif; background-color: rgb(255, 255, 255);"><span style="font-size: 13.5pt; font-family: Arial, sans-serif; color: black;"></span></p></div><div></div><ul style="margin-bottom:0in" type="disc"> </ul><div>item 2 with more text</div><ul style="margin-bottom:0in" type="disc"> <li style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; color: black;"><span style="font-size:13.5pt;font-family:&quot;Arial&quot;,sans-serif">Item 2</span><span style="font-size:13.5pt"><o:p>&nbsp;</o:p></span></li> <li style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; color: black;"><span style="font-size:13.5pt;font-family:&quot;Arial&quot;,sans-serif">Sdasd</span><span style="font-size:13.5pt"><o:p>&nbsp;</o:p></span></li> <li style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; color: black;"><span style="font-size:13.5pt;font-family:&quot;Arial&quot;,sans-serif">asdasd</span><span style="font-size:13.5pt"><o:p>&nbsp;</o:p></span></li></ul><div></div><div><p style="margin: 0in 0in 8pt; line-height: 15.6933px; font-size: 11pt; font-family: Calibri, sans-serif; background-color: rgb(255, 255, 255);"><o:p></o:p></p></div>';
             editor.setContent(originalContent);
 
-            const ul = doc.getElementsByTagName('ul')[0];
+            const ul = doc.querySelector('ul');
             const li = ul.children[0];
 
             const range = new Range();
@@ -235,7 +235,7 @@ describe('clearAutodetectFormat tests', () => {
 
         let table: HTMLTableElement = doc.getElementById('testTable') as HTMLTableElement;
         let cell = table.rows[0].cells[2];
-        let span = cell.getElementsByTagName('span')[0];
+        let span = cell.querySelector('span') as HTMLSpanElement;
 
         const range = new Range();
         range.setStart(span, 0);
@@ -244,7 +244,7 @@ describe('clearAutodetectFormat tests', () => {
 
         clearFormat(editor, ClearFormatMode.AutoDetect);
 
-        table = doc.getElementsByTagName('table')[0] as HTMLTableElement;
+        table = doc.querySelector('table') as HTMLTableElement;
         cell = table.rows[0].cells[2];
         expect(cell.innerHTML).toBe(expectedFormat);
     });
@@ -264,7 +264,7 @@ describe('clearAutodetectFormat tests', () => {
 describe('clearAutodetectFormat Partial Tests', () => {
     const TEST_ID = 'clearAutodetectFormatTest';
     let editor: IEditor;
-    let doc: Document;
+    let doc: EditorHost;
     beforeEach(() => {
         editor = TestHelper.initEditor(TEST_ID, undefined, undefined);
         doc = editor.getEditorHost();
@@ -303,7 +303,7 @@ describe('clearAutodetectFormat Partial Tests', () => {
             '<p style="margin:0in 0in 8pt;line-height:107%;font-size:11pt;font-family:Calibri, sans-serif"><span style="font-size: 13.5pt; font-family: &quot;Arial&quot;, sans-serif; color: black;"></span></p><div><p style="margin: 0in 0in 8pt; line-height: 15.6933px; font-size: 11pt; font-family: Calibri, sans-serif; background-color: rgb(255, 255, 255);"><span style="font-size: 13.5pt; font-family: Arial, sans-serif; color: black;"></span></p></div><div></div><ul style="margin-bottom:0in" type="disc"> <li style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; color: black;"><span style="font-size:13.5pt;font-family:&quot;Arial&quot;,sans-serif">item 1</span><span style="font-size:13.5pt"><o:p>&nbsp;</o:p></span></li> <li style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; color: black;"><span style="font-family: arial; font-size: 12pt; font-weight: 400;">Item</span><span style="font-size:13.5pt;font-family:&quot;Arial&quot;,sans-serif"> 2</span><span style="font-size:13.5pt"><o:p>&nbsp;</o:p></span></li> <li style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; color: black;"><span style="font-size:13.5pt;font-family:&quot;Arial&quot;,sans-serif">Sdasd</span><span style="font-size:13.5pt"><o:p>&nbsp;</o:p></span></li> <li style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; color: black;"><span style="font-size:13.5pt;font-family:&quot;Arial&quot;,sans-serif">asdasd</span><span style="font-size:13.5pt"><o:p>&nbsp;</o:p></span></li></ul><div></div><div><p style="margin: 0in 0in 8pt; line-height: 15.6933px; font-size: 11pt; font-family: Calibri, sans-serif; background-color: rgb(255, 255, 255);"><o:p></o:p></p></div>';
         editor.setContent(originalContent);
 
-        const ul = doc.getElementsByTagName('ul')[0];
+        const ul = doc.querySelector('ul');
         const li = ul.children[1];
         const text = li.firstChild.firstChild;
         const range = new Range();
@@ -326,7 +326,7 @@ describe('clearAutodetectFormat tests with defaultFormat | ', () => {
 
     const TEST_ID = 'clearAutodetectFormatTest';
     let editor: IEditor;
-    let doc: Document;
+    let doc: EditorHost;
 
     beforeEach(() => {
         editor = TestHelper.initEditor(TEST_ID, undefined, undefined, {
@@ -424,7 +424,7 @@ describe('clearAutodetectFormat tests with defaultFormat | ', () => {
             const expectedFormat =
                 '<p style="margin:0in 0in 8pt;line-height:107%;font-size:11pt;font-family:Calibri, sans-serif"><span style="font-size: 13.5pt; font-family: &quot;Arial&quot;, sans-serif; color: black;"></span></p><div><p style="margin: 0in 0in 8pt; line-height: 15.6933px; font-size: 11pt; font-family: Calibri, sans-serif; background-color: rgb(255, 255, 255);"><span style="font-size: 13.5pt; font-family: Arial, sans-serif; color: black;"></span></p></div><div></div><ul style="margin-bottom:0in" type="disc"> </ul><div><b><span style="font-family: arial; font-size: 12pt;">item 2 with more text</span></b></div><ul style="margin-bottom:0in" type="disc"> <li style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; color: black;"><span style="font-size:13.5pt;font-family:&quot;Arial&quot;,sans-serif">Item 2</span><span style="font-size:13.5pt"><o:p>&nbsp;</o:p></span></li> <li style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; color: black;"><span style="font-size:13.5pt;font-family:&quot;Arial&quot;,sans-serif">Sdasd</span><span style="font-size:13.5pt"><o:p>&nbsp;</o:p></span></li> <li style="margin: 0in 0in 8pt; font-size: 11pt; font-family: Calibri, sans-serif; color: black;"><span style="font-size:13.5pt;font-family:&quot;Arial&quot;,sans-serif">asdasd</span><span style="font-size:13.5pt"><o:p>&nbsp;</o:p></span></li></ul><div></div><div><p style="margin: 0in 0in 8pt; line-height: 15.6933px; font-size: 11pt; font-family: Calibri, sans-serif; background-color: rgb(255, 255, 255);"><o:p></o:p></p></div>';
             runTest(originalContent, expectedFormat, () => {
-                const ul = doc.getElementsByTagName('ul')[0];
+                const ul = doc.querySelector('ul');
                 const li = ul.children[0];
 
                 const range = new Range();
@@ -442,7 +442,7 @@ describe('clearAutodetectFormat tests with defaultFormat | ', () => {
             () => {
                 let table: HTMLTableElement = doc.getElementById('testTable') as HTMLTableElement;
                 let cell = table.rows[0].cells[2];
-                let span = cell.getElementsByTagName('span')[0];
+                let span = cell.querySelector('span') as HTMLSpanElement;
 
                 const range = new Range();
                 range.setStart(span, 0);
@@ -454,7 +454,7 @@ describe('clearAutodetectFormat tests with defaultFormat | ', () => {
                     ' <p style="margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in"><b><span style="font-family: arial; font-size: 12pt;">asdfadf</span></b><span style="color:red"><o:p>&nbsp;</o:p></span></p> ';
                 let table: HTMLTableElement = doc.getElementById('testTable') as HTMLTableElement;
                 let cell = table.rows[0].cells[2];
-                table = doc.getElementsByTagName('table')[0] as HTMLTableElement;
+                table = doc.querySelector('table') as HTMLTableElement;
                 cell = table.rows[0].cells[2];
                 expect(cell.innerHTML).toBe(expectedFormat);
             }

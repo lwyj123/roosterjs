@@ -197,12 +197,11 @@ xdescribe('Table Resizer/Inserter tests', () => {
     });
 
     function getCellRect(i: number, j: number): DOMRect | undefined {
-        const tables = editor.getEditorHost().getElementsByTagName('table');
-        if (!tables || tables.length < 1) {
+        const table = editor.getEditorHost().querySelector('table');
+        if (!table) {
             return undefined;
         }
 
-        const table = tables[0];
         if (i >= table.rows.length || j >= table.rows[i].cells.length) {
             return undefined;
         }
@@ -222,7 +221,7 @@ xdescribe('Table Resizer/Inserter tests', () => {
     }
 
     function getCurrentTable(): HTMLTableElement {
-        return editor.getEditorHost().getElementsByTagName('table')[0] as HTMLTableElement;
+        return editor.getEditorHost().querySelector('table') as HTMLTableElement;
     }
 
     function getTableRows(table: HTMLTableElement): number {

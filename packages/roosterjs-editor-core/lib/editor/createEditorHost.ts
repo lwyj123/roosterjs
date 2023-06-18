@@ -122,6 +122,10 @@ abstract class EditorHostBase<T extends ShadowRoot | Document> implements Editor
         return this.shadowRootOrDoc.querySelector(selectors);
     }
 
+    dispatchEvent(event: Event): boolean {
+        return this.shadowRootOrDoc.dispatchEvent(event);
+    }
+
     get activeElement() {
         return this.shadowRootOrDoc.activeElement;
     }

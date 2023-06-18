@@ -132,6 +132,9 @@ export default interface EditorHost {
     // querySelector<K extends keyof MathMLElementTagNameMap>(selectors: K): MathMLElementTagNameMap[K] | null;
     querySelector<E extends Element = Element>(selectors: string): E | null;
 
+    /** Dispatches a synthetic event event to target and returns true if either event's cancelable attribute value is false or its preventDefault() method was not invoked, and false otherwise. */
+    dispatchEvent(event: Event): boolean;
+
     /**
      * Get window of editor
      */
