@@ -1,9 +1,9 @@
-import { CompatibleTableBorderFormat } from 'roosterjs-editor-types/lib/compatibleTypes';
+import { CompatibleTableBorderFormat } from 'lwyj123-roosterjs-editor-types/lib/compatibleTypes';
 import { createCheckboxFormatRenderer } from '../utils/createCheckboxFormatRenderer';
 import { createColorFormatRenderer } from '../utils/createColorFormatRender';
 import { createDropDownFormatRenderer } from '../utils/createDropDownFormatRenderer';
 import { FormatRenderer } from '../utils/FormatRenderer';
-import { TableMetadataFormat } from 'roosterjs-content-model';
+import { TableMetadataFormat } from 'lwyj123-roosterjs-content-model';
 
 export const TableMetadataFormatRenders: FormatRenderer<TableMetadataFormat>[] = [
     createColorFormatRenderer<TableMetadataFormat>(

@@ -6,7 +6,6 @@ const {
     roosterJsDistPath,
     roosterJsUiDistPath,
     nodeModulesPath,
-    packagesUiPath,
     rootPath,
     runWebPack,
     getWebpackExternalCallback,
@@ -14,19 +13,17 @@ const {
 
 async function pack(isProduction, isAmd, isUi, filename) {
     const webpackConfig = {
-        entry: isUi
-            ? path.join(packagesUiPath, 'roosterjs-react/lib/index.ts')
-            : path.join(packagesPath, 'roosterjs/lib/index.ts'),
+        entry: path.join(packagesPath, 'lwyj123-roosterjs/lib/index.ts'),
         devtool: 'source-map',
         output: {
             filename,
             path: isUi ? roosterJsUiDistPath : roosterJsDistPath,
             libraryTarget: isAmd ? 'amd' : undefined,
-            library: isAmd ? undefined : isUi ? 'roosterjsReact' : 'roosterjs',
+            library: isAmd ? undefined : isUi ? 'lwyj123-roosterjsReact' : 'lwyj123-roosterjs',
         },
         resolve: {
             extensions: ['.ts', '.tsx', '.js'],
-            modules: [packagesPath, packagesUiPath, nodeModulesPath],
+            modules: [packagesPath, nodeModulesPath],
         },
         module: {
             rules: [

@@ -8,7 +8,6 @@ const {
     nodeModulesPath,
     distPath,
     packagesPath,
-    packagesUiPath,
     allPackages,
 } = require('./common');
 
@@ -16,7 +15,6 @@ function buildCommonJs() {
     const typescriptPath = path.join(nodeModulesPath, 'typescript/lib/tsc.js');
 
     runNode(typescriptPath + ` --build`, packagesPath);
-    runNode(typescriptPath, packagesUiPath);
 
     allPackages.forEach(packageName => {
         const copy = fileName => {

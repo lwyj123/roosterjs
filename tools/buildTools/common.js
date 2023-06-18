@@ -10,16 +10,15 @@ const webpack = require('webpack');
 
 const rootPath = path.join(__dirname, '../..');
 const packagesPath = path.join(rootPath, 'packages');
-const packagesUiPath = path.join(rootPath, 'packages-ui');
 const nodeModulesPath = path.join(rootPath, 'node_modules');
 const typescriptPath = path.join(nodeModulesPath, 'typescript/lib/tsc.js');
 const distPath = path.join(rootPath, 'dist');
-const roosterJsDistPath = path.join(distPath, 'roosterjs/dist');
+const roosterJsDistPath = path.join(distPath, 'lwyj123-roosterjs/dist');
 const roosterJsUiDistPath = path.join(distPath, 'roosterjs-react/dist');
 const deployPath = path.join(distPath, 'deploy');
 const compatibleEnumPath = path.join(
     packagesPath,
-    'roosterjs-editor-types',
+    'lwyj123-roosterjs-editor-types',
     'lib',
     'compatibleEnum'
 );
@@ -63,8 +62,7 @@ function collectPackages(startPath) {
 }
 
 const packages = collectPackages(packagesPath);
-const packagesUI = collectPackages(packagesUiPath);
-const allPackages = packages.concat(packagesUI);
+const allPackages = packages;
 
 function runNode(command, cwd, stdio) {
     exec('node ' + command, {
@@ -82,8 +80,6 @@ function err(message) {
 function findPackageRoot(packageName) {
     return packages.indexOf(packageName) >= 0
         ? packagesPath
-        : packagesUI.indexOf(packageName) >= 0
-        ? packagesUiPath
         : null;
 }
 
@@ -120,7 +116,7 @@ const NoneExternalPackageNames = [
     // For now we don't pack ContentModel code into rooster.js file,
     // so need to bundle it together with demo site and anywhere it is used.
     // Once ContentModel is finished, we will bundle it into rooster.js and remove from this list.
-    'roosterjs-content-model',
+    'lwyj123-roosterjs-content-model',
 ];
 
 function getWebpackExternalCallback(externalLibraryPairs) {
@@ -129,7 +125,7 @@ function getWebpackExternalCallback(externalLibraryPairs) {
         ['react-dom', 'ReactDOM'],
         [/^office-ui-fabric-react(\/.*)?$/, 'FluentUIReact'],
         [/^@fluentui(\/.*)?$/, 'FluentUIReact'],
-        ...packages.filter(x => NoneExternalPackageNames.indexOf(x) < 0).map(p => [p, 'roosterjs']),
+        ...packages.filter(x => NoneExternalPackageNames.indexOf(x) < 0).map(p => [p, 'lwyj123-roosterjs']),
         ...externalLibraryPairs,
     ]);
 
@@ -149,7 +145,6 @@ function getWebpackExternalCallback(externalLibraryPairs) {
 module.exports = {
     rootPath,
     packagesPath,
-    packagesUiPath,
     nodeModulesPath,
     typescriptPath,
     distPath,
@@ -160,7 +155,6 @@ module.exports = {
     runNode,
     err,
     packages,
-    packagesUI,
     allPackages,
     readPackageJson,
     mainPackageJson,

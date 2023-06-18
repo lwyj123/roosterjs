@@ -1,6 +1,6 @@
-import { FormatState, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
-import { getFormatState, IContentModelEditor } from 'roosterjs-content-model';
-import { getObjectKeys } from 'roosterjs-editor-dom';
+import { FormatState, PluginEvent, PluginEventType } from 'lwyj123-roosterjs-editor-types';
+import { getFormatState, IContentModelEditor } from 'lwyj123-roosterjs-content-model';
+import { getObjectKeys } from 'lwyj123-roosterjs-editor-dom';
 import { LocalizedStrings, RibbonButton, RibbonPlugin, UIUtilities } from 'roosterjs-react';
 
 export class ContentModelRibbonPlugin implements RibbonPlugin {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import BuildInPluginState from './BuildInPluginState';
-import { EditorOptions, IEditor } from 'roosterjs-editor-types';
+import { EditorOptions, IEditor } from 'lwyj123-roosterjs-editor-types';
 
 export interface MainPaneBaseState {
     showSidePane: boolean;

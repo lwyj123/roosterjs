@@ -8,7 +8,6 @@ const {
     packagesPath,
     deployPath,
     roosterJsDistPath,
-    packagesUiPath,
     roosterJsUiDistPath,
     runWebPack,
     getWebpackExternalCallback,
@@ -27,7 +26,7 @@ async function buildDemoSite() {
         },
         resolve: {
             extensions: ['.ts', '.tsx', '.js', '.svg', '.scss', '.'],
-            modules: [sourcePath, packagesPath, packagesUiPath, nodeModulesPath],
+            modules: [sourcePath, packagesPath, nodeModulesPath],
         },
         module: {
             rules: [
@@ -65,8 +64,8 @@ async function buildDemoSite() {
             ],
         },
         externals: getWebpackExternalCallback([
-            [/^roosterjs-editor-plugins\/.*$/, 'roosterjs'],
-            [/^rosterjs-react\/.*$/, 'roosterjsReact'],
+            [/^lwyj123-roosterjs-editor-plugins\/.*$/, 'lwyj123-roosterjs'],
+            [/^lwyj123-rosterjs-react\/.*$/, 'lwyj123-roosterjsReact'],
         ]),
         stats: 'minimal',
         mode: 'production',

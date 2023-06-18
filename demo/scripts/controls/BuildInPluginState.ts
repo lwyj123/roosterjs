@@ -3,7 +3,7 @@ import {
     ContentEditFeatureSettings,
     DefaultFormat,
     ExperimentalFeatures,
-} from 'roosterjs-editor-types';
+} from 'lwyj123-roosterjs-editor-types';
 
 export const UrlPlaceholder = '$url$';
 

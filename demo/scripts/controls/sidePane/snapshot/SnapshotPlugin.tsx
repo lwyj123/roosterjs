@@ -2,9 +2,9 @@ import * as React from 'react';
 import SidePanePlugin from '../../SidePanePlugin';
 import SnapshotPane from './SnapshotPane';
 import UndoSnapshots from './UndoSnapshots';
-import { ChangeSource, IEditor, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
-import { createSnapshots } from 'roosterjs-editor-dom';
-import { Snapshot } from 'roosterjs-editor-types';
+import { ChangeSource, IEditor, PluginEvent, PluginEventType } from 'lwyj123-roosterjs-editor-types';
+import { createSnapshots } from 'lwyj123-roosterjs-editor-dom';
+import { Snapshot } from 'lwyj123-roosterjs-editor-types';
 
 export default class SnapshotPlugin implements SidePanePlugin {
     private editorInstance: IEditor;

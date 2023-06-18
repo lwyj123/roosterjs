@@ -1,6 +1,6 @@
 import EventViewPane from './EventViewPane';
 import SidePanePluginImpl from '../SidePanePluginImpl';
-import { PluginEvent } from 'roosterjs-editor-types';
+import { PluginEvent } from 'lwyj123-roosterjs-editor-types';
 import { SidePaneElementProps } from '../SidePaneElement';
 
 export default class EventViewPlugin extends SidePanePluginImpl<

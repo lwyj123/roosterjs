@@ -9,7 +9,7 @@ import {
     ContentModelBlockFormat,
     ContentModelTableRow,
     hasSelectionInBlockGroup,
-} from 'roosterjs-content-model';
+} from 'lwyj123-roosterjs-content-model';
 
 const styles = require('./ContentModelTableRowView.scss');
 

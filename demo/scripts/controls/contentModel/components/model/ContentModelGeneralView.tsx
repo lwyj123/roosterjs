@@ -8,7 +8,7 @@ import {
     ContentModelGeneralBlock,
     ContentModelGeneralSegment,
     hasSelectionInBlock,
-} from 'roosterjs-content-model';
+} from 'lwyj123-roosterjs-content-model';
 
 const styles = require('./ContentModelGeneralView.scss');
 

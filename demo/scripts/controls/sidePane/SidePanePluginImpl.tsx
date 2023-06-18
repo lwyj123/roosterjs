@@ -1,6 +1,6 @@
 import * as React from 'react';
 import SidePanePlugin from '../SidePanePlugin';
-import { IEditor } from 'roosterjs-editor-types';
+import { IEditor } from 'lwyj123-roosterjs-editor-types';
 import { SidePaneElement, SidePaneElementProps } from './SidePaneElement';
 
 interface SidePaneComponent<P extends SidePaneElementProps>

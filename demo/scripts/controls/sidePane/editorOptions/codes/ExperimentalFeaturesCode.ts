@@ -1,5 +1,5 @@
 import CodeElement from './CodeElement';
-import { ExperimentalFeatures } from 'roosterjs-editor-types';
+import { ExperimentalFeatures } from 'lwyj123-roosterjs-editor-types';
 
 export default class ExperimentalFeaturesCode extends CodeElement {
     constructor(private experimentalFeatures: ExperimentalFeatures[]) {

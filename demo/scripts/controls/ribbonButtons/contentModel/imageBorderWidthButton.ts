@@ -1,6 +1,6 @@
-import { isContentModelEditor } from 'roosterjs-content-model';
+import { isContentModelEditor } from 'lwyj123-roosterjs-content-model';
 import { RibbonButton } from 'roosterjs-react';
-import { setImageBorder } from 'roosterjs-content-model';
+import { setImageBorder } from 'lwyj123-roosterjs-content-model';
 
 const WIDTH = [8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72];
 

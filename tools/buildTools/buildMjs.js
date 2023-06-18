@@ -4,7 +4,6 @@ const path = require('path');
 const fs = require('fs');
 const {
     packagesPath,
-    packagesUiPath,
     nodeModulesPath,
     allPackages,
     distPath,
@@ -19,21 +18,13 @@ function buildMjs() {
             ` -p ${path.join(
                 packagesPath,
                 'tsconfig.build.json'
-            )} -t es5 --moduleResolution node -m esnext`,
-        packagesPath
-    );
-    runNode(
-        typescriptPath +
-            ` -p ${path.join(
-                packagesUiPath,
-                'tsconfig.json'
-            )} -t es5 --moduleResolution node -m esnext`,
+            )} -t es6 --moduleResolution node -m esnext`,
         packagesPath
     );
 
     allPackages.forEach(packageName => {
         const packagePath = path.join(distPath, packageName);
-        // fs.renameSync(`${packagePath}/lib`, `${packagePath}/lib-mjs`);
+        fs.renameSync(`${packagePath}/lib`, `${packagePath}/lib-mjs`);
     });
 }
 

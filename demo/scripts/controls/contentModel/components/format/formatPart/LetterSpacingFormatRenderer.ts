@@ -1,6 +1,6 @@
 import { createTextFormatRenderer } from '../utils/createTextFormatRenderer';
 import { FormatRenderer } from '../utils/FormatRenderer';
-import { LetterSpacingFormat } from 'roosterjs-content-model';
+import { LetterSpacingFormat } from 'lwyj123-roosterjs-content-model';
 
 export const LetterSpacingFormatRenderer: FormatRenderer<LetterSpacingFormat> = createTextFormatRenderer<
     LetterSpacingFormat

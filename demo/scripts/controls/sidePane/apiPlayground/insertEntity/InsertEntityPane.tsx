@@ -1,8 +1,8 @@
 import * as React from 'react';
 import ApiPaneProps from '../ApiPaneProps';
-import { Entity } from 'roosterjs-editor-types';
-import { getEntityFromElement, getEntitySelector } from 'roosterjs-editor-dom';
-import { insertEntity } from 'roosterjs-editor-api';
+import { Entity } from 'lwyj123-roosterjs-editor-types';
+import { getEntityFromElement, getEntitySelector } from 'lwyj123-roosterjs-editor-dom';
+import { insertEntity } from 'lwyj123-roosterjs-editor-api';
 import { trustedHTMLHandler } from '../../../../utils/trustedHTMLHandler';
 
 const styles = require('./InsertEntityPane.scss');

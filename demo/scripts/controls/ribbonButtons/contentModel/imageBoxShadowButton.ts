@@ -1,6 +1,6 @@
-import { isContentModelEditor } from 'roosterjs-content-model';
+import { isContentModelEditor } from 'lwyj123-roosterjs-content-model';
 import { RibbonButton } from 'roosterjs-react';
-import { setImageBoxShadow } from 'roosterjs-content-model';
+import { setImageBoxShadow } from 'lwyj123-roosterjs-content-model';
 
 const STYLES_NAMES: Record<string, string> = {
     noShadow: 'noShadow',

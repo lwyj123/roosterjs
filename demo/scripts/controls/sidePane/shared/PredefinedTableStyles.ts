@@ -1,5 +1,5 @@
-import { TableBorderFormat, TableFormat } from 'roosterjs-editor-types';
-import { TableMetadataFormat } from 'roosterjs-content-model';
+import { TableBorderFormat, TableFormat } from 'lwyj123-roosterjs-editor-types';
+import { TableMetadataFormat } from 'lwyj123-roosterjs-content-model';
 
 export const PREDEFINED_STYLES: Record<
     string,

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ContentModelHyperLinkFormat, LinkFormat } from 'roosterjs-content-model';
+import { ContentModelHyperLinkFormat, LinkFormat } from 'lwyj123-roosterjs-content-model';
 import { createTextFormatRenderer } from './utils/createTextFormatRenderer';
 import { DisplayFormatRenderer } from './formatPart/DisplayFormatRenderer';
 import { FormatRenderer } from './utils/FormatRenderer';

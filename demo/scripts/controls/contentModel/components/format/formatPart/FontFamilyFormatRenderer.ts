@@ -1,5 +1,5 @@
 import { createTextFormatRenderer } from '../utils/createTextFormatRenderer';
-import { FontFamilyFormat } from 'roosterjs-content-model';
+import { FontFamilyFormat } from 'lwyj123-roosterjs-content-model';
 import { FormatRenderer } from '../utils/FormatRenderer';
 
 export const FontFamilyFormatRenderer: FormatRenderer<FontFamilyFormat> = createTextFormatRenderer<

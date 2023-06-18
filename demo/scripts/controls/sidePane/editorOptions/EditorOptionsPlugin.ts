@@ -2,7 +2,7 @@ import BuildInPluginState, { BuildInPluginProps, UrlPlaceholder } from '../../Bu
 import getDefaultContentEditFeatureSettings from './getDefaultContentEditFeatureSettings';
 import OptionsPane from './OptionsPane';
 import SidePanePluginImpl from '../SidePanePluginImpl';
-import { ExperimentalFeatures } from 'roosterjs-editor-types';
+import { ExperimentalFeatures } from 'lwyj123-roosterjs-editor-types';
 import { SidePaneElementProps } from '../SidePaneElement';
 
 const initialState: BuildInPluginState = {

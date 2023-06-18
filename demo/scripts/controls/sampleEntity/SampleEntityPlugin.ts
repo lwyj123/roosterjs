@@ -1,4 +1,4 @@
-import { insertEntity } from 'roosterjs-editor-api';
+import { insertEntity } from 'lwyj123-roosterjs-editor-api';
 import {
     createNumberDefinition,
     createObjectDefinition,
@@ -7,7 +7,7 @@ import {
     getEntitySelector,
     getMetadata,
     setMetadata,
-} from 'roosterjs-editor-dom';
+} from 'lwyj123-roosterjs-editor-dom';
 import {
     EditorPlugin,
     Entity,
@@ -16,7 +16,7 @@ import {
     IEditor,
     PluginEvent,
     PluginEventType,
-} from 'roosterjs-editor-types';
+} from 'lwyj123-roosterjs-editor-types';
 
 const EntityType = 'SampleEntity';
 

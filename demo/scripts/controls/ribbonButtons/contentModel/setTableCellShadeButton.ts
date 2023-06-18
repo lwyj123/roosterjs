@@ -1,5 +1,5 @@
-import { isContentModelEditor } from 'roosterjs-content-model';
-import { setTableCellShade } from 'roosterjs-content-model';
+import { isContentModelEditor } from 'lwyj123-roosterjs-content-model';
+import { setTableCellShade } from 'lwyj123-roosterjs-content-model';
 import {
     BackgroundColorKeys,
     getBackgroundColorValue,

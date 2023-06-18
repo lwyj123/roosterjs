@@ -3,9 +3,9 @@ import * as React from 'react';
 import ApiPaneProps from '../ApiPaneProps';
 import ColorPicker from '../../../colorPicker/ColorPicker';
 import { createTableFormat, PREDEFINED_STYLES } from '../../shared/PredefinedTableStyles';
-import { editTable, formatTable } from 'roosterjs-editor-api';
-import { getTagOfNode, VTable } from 'roosterjs-editor-dom';
-import { IEditor, PositionType, TableFormat, TableOperation, VCell } from 'roosterjs-editor-types';
+import { editTable, formatTable } from 'lwyj123-roosterjs-editor-api';
+import { getTagOfNode, VTable } from 'lwyj123-roosterjs-editor-dom';
+import { IEditor, PositionType, TableFormat, TableOperation, VCell } from 'lwyj123-roosterjs-editor-types';
 
 const PREDEFINED_STYLES_KEYS = {
     default: 'DEFAULT',

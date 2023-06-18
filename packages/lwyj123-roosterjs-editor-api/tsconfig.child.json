@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "strict": true
+    },
+    "extends": "../tsconfig.json",
+    "references": [
+        { "path": "./lib/format/tsconfig.child.json" },
+        { "path": "./lib/table/tsconfig.child.json" },
+        { "path": "./lib/utils/tsconfig.child.json" },
+        { "path": "../lwyj123-roosterjs-editor-types/tsconfig.child.json" },
+        { "path": "../lwyj123-roosterjs-editor-dom/tsconfig.child.json" }
+    ],
+    "include": ["./lib/index.ts"]
+}

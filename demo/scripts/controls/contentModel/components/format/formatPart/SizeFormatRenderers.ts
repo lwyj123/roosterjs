@@ -1,6 +1,6 @@
 import { createTextFormatRenderer } from '../utils/createTextFormatRenderer';
 import { FormatRenderer } from '../utils/FormatRenderer';
-import { SizeFormat } from 'roosterjs-content-model';
+import { SizeFormat } from 'lwyj123-roosterjs-content-model';
 
 export const SizeFormatRenderers: FormatRenderer<SizeFormat>[] = [
     createTextFormatRenderer<SizeFormat>(

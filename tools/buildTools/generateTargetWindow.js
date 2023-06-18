@@ -14,7 +14,7 @@ export default interface TargetWindowBase {
 
 function generateTargetWindow() {
     const libDomFilePath = path.join(nodeModulesPath, 'typescript/lib/lib.dom.d.ts');
-    const typePath = path.join(packagesPath, 'roosterjs-editor-types');
+    const typePath = path.join(packagesPath, 'lwyj123-roosterjs-editor-types');
     const targetPath = path.join(typePath, 'lib/interface/TargetWindowBase.g.ts');
     const packageJsonPath = path.join(typePath, 'package.json');
 

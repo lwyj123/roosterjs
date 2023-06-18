@@ -1,6 +1,6 @@
 import CodeElement from './CodeElement';
 import ContentEditFeaturesCode from './ContentEditFeaturesCode';
-import { ContentEditFeatureSettings } from 'roosterjs-editor-types';
+import { ContentEditFeatureSettings } from 'lwyj123-roosterjs-editor-types';
 
 export default class ContentEditCode extends CodeElement {
     private features: ContentEditFeaturesCode;

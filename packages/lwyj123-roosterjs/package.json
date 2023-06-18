@@ -1,0 +1,15 @@
+{
+    "name": "lwyj123-roosterjs",
+    "description": "A simple facade for all roosterjs code",
+    "dependencies": {
+        "tslib": "^2.3.1",
+        "lwyj123-roosterjs-editor-types": "",
+        "lwyj123-roosterjs-editor-types-compatible": "",
+        "lwyj123-roosterjs-editor-dom": "",
+        "lwyj123-roosterjs-editor-core": "",
+        "lwyj123-roosterjs-editor-api": "",
+        "lwyj123-roosterjs-editor-plugins": "",
+        "lwyj123-roosterjs-color-utils": ""
+    },
+    "main": "./lib/index.ts"
+}

@@ -1,13 +1,13 @@
 import FormatStatePane, { FormatStatePaneProps } from './FormatStatePane';
 import SidePanePluginImpl from '../SidePanePluginImpl';
-import { getFormatState } from 'roosterjs-editor-api';
-import { getPositionRect } from 'roosterjs-editor-dom';
-import { IEditor, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
+import { getFormatState } from 'lwyj123-roosterjs-editor-api';
+import { getPositionRect } from 'lwyj123-roosterjs-editor-dom';
+import { IEditor, PluginEvent, PluginEventType } from 'lwyj123-roosterjs-editor-types';
 import { SidePaneElementProps } from '../SidePaneElement';
 import {
     getFormatState as getFormatStateFromContentModel,
     isContentModelEditor,
-} from 'roosterjs-content-model';
+} from 'lwyj123-roosterjs-content-model';
 
 export default class FormatStatePlugin extends SidePanePluginImpl<
     FormatStatePane,

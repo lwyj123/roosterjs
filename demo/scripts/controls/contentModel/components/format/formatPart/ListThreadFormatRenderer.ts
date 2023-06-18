@@ -1,6 +1,6 @@
 import { createTextFormatRenderer } from '../utils/createTextFormatRenderer';
 import { FormatRenderer } from '../utils/FormatRenderer';
-import { ListThreadFormat } from 'roosterjs-content-model';
+import { ListThreadFormat } from 'lwyj123-roosterjs-content-model';
 
 export const ListThreadFormatRenderers: FormatRenderer<ListThreadFormat>[] = [
     createTextFormatRenderer(

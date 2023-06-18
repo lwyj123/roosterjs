@@ -1,7 +1,7 @@
 import CodeElement from './CodeElement';
 import getDefaultContentEditFeatureSettings from '../getDefaultContentEditFeatureSettings';
-import { ContentEditFeatureSettings } from 'roosterjs-editor-types';
-import { getObjectKeys } from 'roosterjs-editor-dom';
+import { ContentEditFeatureSettings } from 'lwyj123-roosterjs-editor-types';
+import { getObjectKeys } from 'lwyj123-roosterjs-editor-dom';
 
 export default class ContentEditFeaturesCode extends CodeElement {
     constructor(private state: ContentEditFeatureSettings) {

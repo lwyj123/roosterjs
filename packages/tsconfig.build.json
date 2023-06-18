@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es6",
         "module": "commonjs",
         "outDir": "../dist",
         "sourceMap": true,
@@ -16,7 +16,7 @@
             "*": ["*"]
         },
         "rootDir": ".",
-        "lib": ["es6", "dom"]
+        "lib": ["ES2017", "dom"]
     },
     "include": ["**/*.ts"]
 }

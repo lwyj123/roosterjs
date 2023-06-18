@@ -1,5 +1,5 @@
 import { createTextFormatRenderer } from '../utils/createTextFormatRenderer';
-import { WhiteSpaceFormat } from 'roosterjs-content-model';
+import { WhiteSpaceFormat } from 'lwyj123-roosterjs-content-model';
 
 export const WhiteSpaceFormatRenderer = createTextFormatRenderer<WhiteSpaceFormat>(
     'White space',

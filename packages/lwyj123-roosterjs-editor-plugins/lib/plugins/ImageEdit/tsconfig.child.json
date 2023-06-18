@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "strict": true
+    },
+    "extends": "../../../../tsconfig.json",
+    "include": ["./**/*.ts"],
+    "files": [
+        "../../pluginUtils/Disposable.ts",
+        "../../pluginUtils/DragAndDropHandler.ts",
+        "../../pluginUtils/DragAndDropHelper.ts"
+    ],
+    "references": [
+        { "path": "../../../../lwyj123-roosterjs-editor-types/tsconfig.child.json" },
+        { "path": "../../../../lwyj123-roosterjs-editor-dom/tsconfig.child.json" }
+    ]
+}

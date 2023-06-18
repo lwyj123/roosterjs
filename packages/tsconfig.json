@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "ES6",
         "module": "commonjs",
         "outDir": "../dist",
         "sourceMap": true,
@@ -18,37 +18,37 @@
         },
         "rootDir": ".",
         "composite": true,
-        "lib": ["es6", "dom"],
+        "lib": ["ES2017", "dom"],
         "types": []
     },
 
     "references": [
         {
-            "path": "roosterjs-editor-types/tsconfig.child.json"
+            "path": "lwyj123-roosterjs-editor-types/tsconfig.child.json"
         },
         {
-            "path": "roosterjs-editor-types-compatible/tsconfig.child.json"
+            "path": "lwyj123-roosterjs-editor-types-compatible/tsconfig.child.json"
         },
         {
-            "path": "roosterjs-editor-dom/tsconfig.child.json"
+            "path": "lwyj123-roosterjs-editor-dom/tsconfig.child.json"
         },
         {
-            "path": "roosterjs-editor-core/tsconfig.child.json"
+            "path": "lwyj123-roosterjs-editor-core/tsconfig.child.json"
         },
         {
-            "path": "roosterjs-editor-api/tsconfig.child.json"
+            "path": "lwyj123-roosterjs-editor-api/tsconfig.child.json"
         },
         {
-            "path": "roosterjs-editor-plugins/tsconfig.child.json"
+            "path": "lwyj123-roosterjs-editor-plugins/tsconfig.child.json"
         },
         {
-            "path": "roosterjs-color-utils/tsconfig.child.json"
+            "path": "lwyj123-roosterjs-color-utils/tsconfig.child.json"
         },
         {
-            "path": "roosterjs/tsconfig.child.json"
+            "path": "lwyj123-roosterjs/tsconfig.child.json"
         },
         {
-            "path": "roosterjs-content-model/tsconfig.child.json"
+            "path": "lwyj123-roosterjs-content-model/tsconfig.child.json"
         }
     ],
     "include": []

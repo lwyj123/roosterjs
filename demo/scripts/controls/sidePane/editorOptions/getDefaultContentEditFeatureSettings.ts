@@ -1,6 +1,6 @@
-import { ContentEditFeatureSettings } from 'roosterjs-editor-types';
-import { getAllFeatures } from 'roosterjs-editor-plugins/lib/ContentEdit';
-import { getObjectKeys } from 'roosterjs-editor-dom';
+import { ContentEditFeatureSettings } from 'lwyj123-roosterjs-editor-types';
+import { getAllFeatures } from 'lwyj123-roosterjs-editor-plugins/lib/ContentEdit';
+import { getObjectKeys } from 'lwyj123-roosterjs-editor-dom';
 
 export default function getDefaultContentEditFeatureSettings(): ContentEditFeatureSettings {
     const allFeatures = getAllFeatures();

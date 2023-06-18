@@ -4,7 +4,6 @@ const path = require('path');
 const fs = require('fs');
 const {
     packagesPath,
-    packagesUiPath,
     nodeModulesPath,
     allPackages,
     distPath,
@@ -19,15 +18,7 @@ function buildAmd() {
             ` -p ${path.join(
                 packagesPath,
                 'tsconfig.build.json'
-            )} -t es5 --moduleResolution node -m amd`,
-        packagesPath
-    );
-    runNode(
-        typescriptPath +
-            ` -p ${path.join(
-                packagesUiPath,
-                'tsconfig.json'
-            )} -t es5 --moduleResolution node -m amd`,
+            )} -t es6 --moduleResolution node -m amd`,
         packagesPath
     );
 

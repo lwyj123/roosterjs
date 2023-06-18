@@ -11,7 +11,7 @@ import {
     ContentModelFormatContainer,
     ContentModelFormatContainerFormat,
     hasSelectionInBlock,
-} from 'roosterjs-content-model';
+} from 'lwyj123-roosterjs-content-model';
 
 const styles = require('./ContentModelFormatContainerView.scss');
 

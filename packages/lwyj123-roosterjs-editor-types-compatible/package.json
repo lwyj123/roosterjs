@@ -1,0 +1,8 @@
+{
+    "name": "lwyj123-roosterjs-editor-types-compatible",
+    "description": "Type definition for roosterjs with enums that can be compatible with isolatedModules",
+    "dependencies": {
+        "lwyj123-roosterjs-editor-types": ""
+    },
+    "main": "./lib/index.ts"
+}

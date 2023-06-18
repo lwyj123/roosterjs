@@ -7,7 +7,7 @@ import {
     StrikeFormat,
     SuperOrSubScriptFormat,
     UnderlineFormat,
-} from 'roosterjs-content-model';
+} from 'lwyj123-roosterjs-content-model';
 
 export const BoldFormatRenderer: FormatRenderer<BoldFormat> = createTextFormatRenderer<BoldFormat>(
     'Bold',

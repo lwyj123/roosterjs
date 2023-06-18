@@ -1,5 +1,5 @@
 import FormatPainterPlugin from '../../contentModel/plugins/FormatPainterPlugin';
-import { isContentModelEditor } from 'roosterjs-content-model';
+import { isContentModelEditor } from 'lwyj123-roosterjs-content-model';
 import { RibbonButton } from 'roosterjs-react';
 
 /**

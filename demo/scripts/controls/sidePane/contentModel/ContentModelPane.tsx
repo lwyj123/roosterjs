@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ContentModelDocument } from 'roosterjs-content-model';
+import { ContentModelDocument } from 'lwyj123-roosterjs-content-model';
 import { ContentModelDocumentView } from '../../contentModel/components/model/ContentModelDocumentView';
 import { contentModelRibbonButton } from './buttons/contentModelRibbonButton';
 import { exportButton } from './buttons/exportButton';

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ApiPaneProps from '../ApiPaneProps';
-import { getDarkColor } from 'roosterjs-color-utils';
+import { getDarkColor } from 'lwyj123-roosterjs-color-utils';
 
 interface GetDarkColorPaneState {
     lightColor: string;

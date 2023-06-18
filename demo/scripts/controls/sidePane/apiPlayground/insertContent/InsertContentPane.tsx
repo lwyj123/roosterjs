@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ApiPaneProps from '../ApiPaneProps';
-import { ContentPosition, InsertOptionBasic } from 'roosterjs-editor-types';
+import { ContentPosition, InsertOptionBasic } from 'lwyj123-roosterjs-editor-types';
 
 const styles = require('./InsertContentPane.scss');
 

@@ -1,6 +1,6 @@
-import { isContentModelEditor } from 'roosterjs-content-model';
+import { isContentModelEditor } from 'lwyj123-roosterjs-content-model';
 import { QuoteButtonStringKey, RibbonButton } from 'roosterjs-react';
-import { toggleBlockQuote } from 'roosterjs-content-model';
+import { toggleBlockQuote } from 'lwyj123-roosterjs-content-model';
 
 /**
  * @internal

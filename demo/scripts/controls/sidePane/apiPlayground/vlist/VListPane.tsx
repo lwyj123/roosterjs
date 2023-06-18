@@ -1,8 +1,8 @@
 import * as React from 'react';
 import ApiPaneProps from '../ApiPaneProps';
-import VListItem from 'roosterjs-editor-dom/lib/list/VListItem';
-import { createVListFromRegion, VList } from 'roosterjs-editor-dom';
-import { ExperimentalFeatures, IEditor, ListType, PositionType } from 'roosterjs-editor-types';
+import VListItem from 'lwyj123-roosterjs-editor-dom/lib/list/VListItem';
+import { createVListFromRegion, VList } from 'lwyj123-roosterjs-editor-dom';
+import { ExperimentalFeatures, IEditor, ListType, PositionType } from 'lwyj123-roosterjs-editor-types';
 
 interface VListPaneState {
     vlist: VList;

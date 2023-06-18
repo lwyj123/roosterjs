@@ -1,5 +1,5 @@
 import CodeElement from './CodeElement';
-import { DefaultFormat } from 'roosterjs-editor-types';
+import { DefaultFormat } from 'lwyj123-roosterjs-editor-types';
 
 export default class DefaultFormatCode extends CodeElement {
     constructor(private defaultFormat: DefaultFormat) {

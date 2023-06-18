@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Browser } from 'roosterjs-editor-dom';
-import { FormatState } from 'roosterjs-editor-types';
+import { Browser } from 'lwyj123-roosterjs-editor-dom';
+import { FormatState } from 'lwyj123-roosterjs-editor-types';
 import { SidePaneElementProps } from '../SidePaneElement';
 
 const styles = require('./FormatStatePane.scss');

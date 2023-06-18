@@ -1,6 +1,6 @@
-import { isContentModelEditor } from 'roosterjs-content-model';
+import { isContentModelEditor } from 'lwyj123-roosterjs-content-model';
 import { LtrButtonStringKey, RibbonButton } from 'roosterjs-react';
-import { setDirection } from 'roosterjs-content-model';
+import { setDirection } from 'lwyj123-roosterjs-content-model';
 
 /**
  * @internal

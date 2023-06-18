@@ -1,5 +1,5 @@
-import { isContentModelEditor } from 'roosterjs-content-model';
-import { removeLink } from 'roosterjs-content-model';
+import { isContentModelEditor } from 'lwyj123-roosterjs-content-model';
+import { removeLink } from 'lwyj123-roosterjs-content-model';
 import { RemoveLinkButtonStringKey, RibbonButton } from 'roosterjs-react';
 
 /**

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import ApiPaneProps from '../ApiPaneProps';
-import { LinkData } from 'roosterjs-editor-types';
-import { matchLink } from 'roosterjs-editor-dom';
+import { LinkData } from 'lwyj123-roosterjs-editor-types';
+import { matchLink } from 'lwyj123-roosterjs-editor-dom';
 
 interface MatchLinkState {
     linkData: LinkData;

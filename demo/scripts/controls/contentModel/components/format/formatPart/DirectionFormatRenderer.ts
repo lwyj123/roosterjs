@@ -1,5 +1,5 @@
 import { createDropDownFormatRenderer } from '../utils/createDropDownFormatRenderer';
-import { DirectionFormat } from 'roosterjs-content-model';
+import { DirectionFormat } from 'lwyj123-roosterjs-content-model';
 
 export const DirectionFormatRenderer = createDropDownFormatRenderer<DirectionFormat, 'ltr' | 'rtl'>(
     'Direction',

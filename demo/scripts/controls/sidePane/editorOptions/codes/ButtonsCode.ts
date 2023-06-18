@@ -1,5 +1,5 @@
 import CodeElement from './CodeElement';
-import { getObjectKeys } from 'roosterjs-editor-dom';
+import { getObjectKeys } from 'lwyj123-roosterjs-editor-dom';
 
 const codeMap: { [id: string]: string } = {
     buttonB: 'roosterjs.toggleBold(editor)',

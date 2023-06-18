@@ -14,7 +14,6 @@ const {
     err,
     packages,
     roosterJsUiDistPath,
-    packagesUI,
     getWebpackExternalCallback,
 } = require('./common');
 
@@ -38,7 +37,7 @@ const regConst = /(\/\*(\*(?!\/)|[^*])*\*\/\s*)?(export\s+)?(default\s+|declare\
 const regExport = /(\/\*(\*(?!\/)|[^*])*\*\/\s*)?(export\s+)(default\s+([0-9a-zA-Z_]+)\s*,?)?(\s*{([^}]+)})?\s*;/g;
 
 const AllowedCrossPackageImport = {
-    'roosterjs-editor-types/lib/compatibleTypes': 'roosterjs-editor-types/lib/compatibleTypes.d.ts',
+    'lwyj123-roosterjs-editor-types/lib/compatibleTypes': 'lwyj123-roosterjs-editor-types/lib/compatibleTypes.d.ts',
 };
 
 function enqueue(queue, filename, exports) {
@@ -421,11 +420,11 @@ function createQueue(rootPath, baseDir, root, additionalFiles, externalHandler) 
 
 function dts(isAmd, isUi) {
     const targetPath = isUi ? roosterJsUiDistPath : roosterJsDistPath;
-    const targetPackages = isUi ? packagesUI : ['roosterjs'];
-    const startFileName = isUi ? 'roosterjs-react/lib/index.d.ts' : 'roosterjs/lib/index.d.ts';
-    const libraryName = isUi ? 'roosterjsReact' : 'roosterjs';
-    const targetFileName = isUi ? 'rooster-react' : 'rooster';
-    const externalHandler = isUi ? getWebpackExternalCallback([]) : undefined;
+    const targetPackages = ['lwyj123-roosterjs'];
+    const startFileName = 'lwyj123-roosterjs/lib/index.d.ts';
+    const libraryName = 'roosterjs';
+    const targetFileName = 'rooster';
+    const externalHandler = undefined;
 
     mkdirp.sync(targetPath);
 

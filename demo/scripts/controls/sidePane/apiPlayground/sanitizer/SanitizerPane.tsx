@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ApiPaneProps from '../ApiPaneProps';
-import { HtmlSanitizer } from 'roosterjs-editor-dom';
+import { HtmlSanitizer } from 'lwyj123-roosterjs-editor-dom';
 import { trustedHTMLHandler } from '../../../../utils/trustedHTMLHandler';
 
 const styles = require('./SanitizerPane.scss');

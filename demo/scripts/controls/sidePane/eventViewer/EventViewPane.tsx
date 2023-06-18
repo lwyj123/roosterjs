@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { EntityOperation, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
+import { EntityOperation, PluginEvent, PluginEventType } from 'lwyj123-roosterjs-editor-types';
 import { SidePaneElementProps } from '../SidePaneElement';
 import {
     getObjectKeys,
@@ -7,7 +7,7 @@ import {
     HtmlSanitizer,
     readFile,
     safeInstanceOf,
-} from 'roosterjs-editor-dom';
+} from 'lwyj123-roosterjs-editor-dom';
 
 const styles = require('./EventViewPane.scss');
 

@@ -1,5 +1,5 @@
 import { createCheckboxFormatRenderer } from '../utils/createCheckboxFormatRenderer';
-import { SpacingFormat } from 'roosterjs-content-model';
+import { SpacingFormat } from 'lwyj123-roosterjs-content-model';
 
 export const SpacingFormatRenderer = createCheckboxFormatRenderer<SpacingFormat>(
     'BorderCollapsed',

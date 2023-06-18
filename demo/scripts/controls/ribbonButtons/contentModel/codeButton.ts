@@ -1,5 +1,5 @@
 import { CodeButtonStringKey, RibbonButton } from 'roosterjs-react';
-import { isContentModelEditor, toggleCode } from 'roosterjs-content-model';
+import { isContentModelEditor, toggleCode } from 'lwyj123-roosterjs-content-model';
 
 /**
  * @internal

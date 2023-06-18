@@ -12,13 +12,13 @@ import { MarginFormatRenderer } from '../format/formatPart/MarginFormatRenderer'
 import { MetadataView } from '../format/MetadataView';
 import { SpacingFormatRenderer } from '../format/formatPart/SpacingFormatRenderer';
 import { TableMetadataFormatRenders } from '../format/formatPart/TableMetadataFormatRenders';
-import { updateTableMetadata } from 'roosterjs-content-model';
+import { updateTableMetadata } from 'lwyj123-roosterjs-content-model';
 import { useProperty } from '../../hooks/useProperty';
 import {
     ContentModelTable,
     ContentModelTableFormat,
     hasSelectionInBlock,
-} from 'roosterjs-content-model';
+} from 'lwyj123-roosterjs-content-model';
 
 const styles = require('./ContentModelTableView.scss');
 

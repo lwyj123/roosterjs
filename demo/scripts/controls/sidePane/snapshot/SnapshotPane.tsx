@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Snapshot } from 'roosterjs-editor-types';
+import { Snapshot } from 'lwyj123-roosterjs-editor-types';
 
 const styles = require('./SnapshotPane.scss');
 

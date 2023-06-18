@@ -1,4 +1,4 @@
-import { BorderFormat, combineBorderValue, extractBorderValues } from 'roosterjs-content-model';
+import { BorderFormat, combineBorderValue, extractBorderValues } from 'lwyj123-roosterjs-content-model';
 import { createDropDownFormatRenderer } from '../utils/createDropDownFormatRenderer';
 import { createTextFormatRenderer } from '../utils/createTextFormatRenderer';
 import { FormatRenderer } from '../utils/FormatRenderer';

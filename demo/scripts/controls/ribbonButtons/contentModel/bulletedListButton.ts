@@ -1,6 +1,6 @@
 import { BulletedListButtonStringKey, RibbonButton } from 'roosterjs-react';
-import { isContentModelEditor } from 'roosterjs-content-model';
-import { toggleBullet } from 'roosterjs-content-model';
+import { isContentModelEditor } from 'lwyj123-roosterjs-content-model';
+import { toggleBullet } from 'lwyj123-roosterjs-content-model';
 
 /**
  * @internal

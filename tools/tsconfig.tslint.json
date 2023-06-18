@@ -1,8 +1,6 @@
 {
     "include": [
         "../packages/**/*.ts",
-        "../packages-ui/**/*.ts",
-        "../packages-ui/**/*.tsx",
         "../demo/scripts/**/*.ts",
         "../demo/scripts/**/*.tsx"
     ]

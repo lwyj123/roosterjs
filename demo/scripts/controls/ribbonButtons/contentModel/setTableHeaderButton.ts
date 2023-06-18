@@ -1,6 +1,6 @@
-import { formatTable } from 'roosterjs-content-model';
-import { getFormatState } from 'roosterjs-editor-api';
-import { isContentModelEditor } from 'roosterjs-content-model';
+import { formatTable } from 'lwyj123-roosterjs-content-model';
+import { getFormatState } from 'lwyj123-roosterjs-editor-api';
+import { isContentModelEditor } from 'lwyj123-roosterjs-content-model';
 import { RibbonButton } from 'roosterjs-react';
 
 export const setTableHeaderButton: RibbonButton<'ribbonButtonSetTableHeader'> = {

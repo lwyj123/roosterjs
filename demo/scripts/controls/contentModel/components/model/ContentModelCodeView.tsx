@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ContentModelCode, ContentModelCodeFormat } from 'roosterjs-content-model';
+import { ContentModelCode, ContentModelCodeFormat } from 'lwyj123-roosterjs-content-model';
 import { ContentModelView } from '../ContentModelView';
 import { DisplayFormatRenderer } from '../format/formatPart/DisplayFormatRenderer';
 import { FontFamilyFormatRenderer } from '../format/formatPart/FontFamilyFormatRenderer';

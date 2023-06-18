@@ -1,8 +1,8 @@
 import ContentModelPane, { ContentModelPaneProps } from './ContentModelPane';
 import SidePanePluginImpl from '../SidePanePluginImpl';
 import { createRibbonPlugin, RibbonPlugin } from 'roosterjs-react';
-import { IEditor, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
-import { isContentModelEditor } from 'roosterjs-content-model';
+import { IEditor, PluginEvent, PluginEventType } from 'lwyj123-roosterjs-editor-types';
+import { isContentModelEditor } from 'lwyj123-roosterjs-content-model';
 import { setCurrentContentModel } from './currentModel';
 import { SidePaneElementProps } from '../SidePaneElement';
 

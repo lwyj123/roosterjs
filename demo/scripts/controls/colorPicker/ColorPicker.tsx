@@ -1,6 +1,6 @@
 import * as Color from 'color';
 import * as React from 'react';
-import { getComputedStyle } from 'roosterjs-editor-dom';
+import { getComputedStyle } from 'lwyj123-roosterjs-editor-dom';
 
 const styles = require('./ColorPicker.scss');
 

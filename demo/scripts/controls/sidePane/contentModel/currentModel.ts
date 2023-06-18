@@ -1,5 +1,5 @@
-import { ContentModelDocument } from 'roosterjs-content-model';
-import { IEditor } from 'roosterjs-editor-types';
+import { ContentModelDocument } from 'lwyj123-roosterjs-content-model';
+import { IEditor } from 'lwyj123-roosterjs-editor-types';
 
 const CurrentContentModelHolderKey = '_CurrentContentModelHolder';
 

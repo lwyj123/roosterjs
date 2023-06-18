@@ -1,5 +1,5 @@
 import MainPaneBase from '../MainPaneBase';
-import { getObjectKeys } from 'roosterjs-editor-dom';
+import { getObjectKeys } from 'lwyj123-roosterjs-editor-dom';
 import { RibbonButton } from 'roosterjs-react';
 
 const DropDownItems = {

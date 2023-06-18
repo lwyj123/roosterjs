@@ -1,7 +1,7 @@
 import * as React from 'react';
 import BuildInPluginState from '../../BuildInPluginState';
-import { ExperimentalFeatures } from 'roosterjs-editor-types';
-import { getObjectKeys } from 'roosterjs-editor-dom';
+import { ExperimentalFeatures } from 'lwyj123-roosterjs-editor-types';
+import { getObjectKeys } from 'lwyj123-roosterjs-editor-dom';
 
 export interface ExperimentalFeaturesProps {
     state: ExperimentalFeatures[];

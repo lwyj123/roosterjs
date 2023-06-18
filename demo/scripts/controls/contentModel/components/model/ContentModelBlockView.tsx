@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ContentModelBlock } from 'roosterjs-content-model';
+import { ContentModelBlock } from 'lwyj123-roosterjs-content-model';
 import { ContentModelBlockGroupView } from './ContentModelBlockGroupView';
 import { ContentModelDividerView } from './ContentModelDividerView';
 import { ContentModelEntityView } from './ContentModelEntityView';

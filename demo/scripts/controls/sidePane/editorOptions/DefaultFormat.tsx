@@ -1,7 +1,7 @@
 import * as React from 'react';
 import BuildInPluginState from '../../BuildInPluginState';
-import { DefaultFormat } from 'roosterjs-editor-types';
-import { getObjectKeys } from 'roosterjs-editor-dom';
+import { DefaultFormat } from 'lwyj123-roosterjs-editor-types';
+import { getObjectKeys } from 'lwyj123-roosterjs-editor-dom';
 
 type ToggleFormatId = 'bold' | 'italic' | 'underline';
 type ModeIndependentColorId = 'textColors' | 'backgroundColors';

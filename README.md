@@ -147,7 +147,7 @@ In order to run the code below, you may also need to install [webpack](https://w
 2. Create `source.js` to import roosterjs and create an editor:
 
 ```javascript
-var roosterjs = require('roosterjs');
+var roosterjs = require('lwyj123-roosterjs');
 var editorDiv = document.getElementById('editorDiv');
 var editor = roosterjs.createEditor(editorDiv);
 editor.setContent('Welcome to <b>RoosterJs</b>!');
@@ -181,7 +181,7 @@ editor.setContent('Welcome to <b>RoosterJs</b>!');
 2. Add code to `source.js` to handle click event of the buttons:
 
 ```javascript
-var roosterjs = require('roosterjs');
+var roosterjs = require('lwyj123-roosterjs');
 var editorDiv = document.getElementById('editorDiv');
 var editor = roosterjs.createEditor(editorDiv);
 editor.setContent('Welcome to <b>RoosterJs</b>!');

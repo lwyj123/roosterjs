@@ -1,8 +1,8 @@
 import * as React from 'react';
 import apiEntries, { ApiPlaygroundReactComponent } from './apiEntries';
 import ApiPaneProps from './ApiPaneProps';
-import { getObjectKeys } from 'roosterjs-editor-dom';
-import { PluginEvent } from 'roosterjs-editor-types';
+import { getObjectKeys } from 'lwyj123-roosterjs-editor-dom';
+import { PluginEvent } from 'lwyj123-roosterjs-editor-types';
 import { SidePaneElement } from '../SidePaneElement';
 
 const styles = require('./ApiPlaygroundPane.scss');

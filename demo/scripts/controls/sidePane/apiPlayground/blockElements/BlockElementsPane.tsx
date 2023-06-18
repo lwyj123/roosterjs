@@ -1,7 +1,7 @@
 import * as React from 'react';
 import ApiPaneProps from '../ApiPaneProps';
-import { BlockElement, PluginEvent, PluginEventType, PositionType } from 'roosterjs-editor-types';
-import { createRange, isBlockElement } from 'roosterjs-editor-dom';
+import { BlockElement, PluginEvent, PluginEventType, PositionType } from 'lwyj123-roosterjs-editor-types';
+import { createRange, isBlockElement } from 'lwyj123-roosterjs-editor-dom';
 
 const styles = require('./BlockElementsPane.scss');
 

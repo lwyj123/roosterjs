@@ -1,5 +1,5 @@
 import { createTextFormatRenderer } from '../utils/createTextFormatRenderer';
-import { WordBreakFormat } from 'roosterjs-content-model';
+import { WordBreakFormat } from 'lwyj123-roosterjs-content-model';
 
 export const WordBreakFormatRenderer = createTextFormatRenderer<WordBreakFormat>(
     'Word break',

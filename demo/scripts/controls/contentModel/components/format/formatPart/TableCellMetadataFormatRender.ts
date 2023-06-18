@@ -1,5 +1,5 @@
 import { createCheckboxFormatRenderer } from '../utils/createCheckboxFormatRenderer';
-import { TableCellMetadataFormat } from 'roosterjs-editor-types';
+import { TableCellMetadataFormat } from 'lwyj123-roosterjs-editor-types';
 
 export const TableCellMetadataFormatRender = createCheckboxFormatRenderer<TableCellMetadataFormat>(
     'BgColorOverride',

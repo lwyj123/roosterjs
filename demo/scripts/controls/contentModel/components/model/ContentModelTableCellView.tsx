@@ -13,7 +13,7 @@ import { PaddingFormatRenderer } from '../format/formatPart/PaddingFormatRendere
 import { TableCellMetadataFormatRender } from '../format/formatPart/TableCellMetadataFormatRender';
 import { TextAlignFormatRenderer } from '../format/formatPart/TextAlignFormatRenderer';
 import { TextColorFormatRenderer } from '../format/formatPart/TextColorFormatRenderer';
-import { updateTableCellMetadata } from 'roosterjs-content-model';
+import { updateTableCellMetadata } from 'lwyj123-roosterjs-content-model';
 import { useProperty } from '../../hooks/useProperty';
 import { VerticalAlignFormatRenderer } from '../format/formatPart/VerticalAlignFormatRenderer';
 import { WordBreakFormatRenderer } from '../format/formatPart/WordBreakFormatRenderer';
@@ -21,7 +21,7 @@ import {
     ContentModelTableCell,
     ContentModelTableCellFormat,
     hasSelectionInBlockGroup,
-} from 'roosterjs-content-model';
+} from 'lwyj123-roosterjs-content-model';
 
 const styles = require('./ContentModelTableCellView.scss');
 

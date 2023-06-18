@@ -1,5 +1,5 @@
-import { isContentModelEditor } from 'roosterjs-content-model';
-import { setHeaderLevel } from 'roosterjs-content-model';
+import { isContentModelEditor } from 'lwyj123-roosterjs-content-model';
+import { setHeaderLevel } from 'lwyj123-roosterjs-content-model';
 import {
     getButtons,
     HeaderButtonStringKey,

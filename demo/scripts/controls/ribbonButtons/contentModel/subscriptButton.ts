@@ -1,6 +1,6 @@
-import { isContentModelEditor } from 'roosterjs-content-model';
+import { isContentModelEditor } from 'lwyj123-roosterjs-content-model';
 import { RibbonButton, SubscriptButtonStringKey } from 'roosterjs-react';
-import { toggleSubscript } from 'roosterjs-content-model';
+import { toggleSubscript } from 'lwyj123-roosterjs-content-model';
 
 /**
  * @internal

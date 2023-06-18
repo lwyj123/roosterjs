@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BlockGroupContentView } from './BlockGroupContentView';
-import { ContentModelDocument, hasSelectionInBlockGroup } from 'roosterjs-content-model';
+import { ContentModelDocument, hasSelectionInBlockGroup } from 'lwyj123-roosterjs-content-model';
 import { ContentModelView } from '../ContentModelView';
 
 const styles = require('./ContentModelDocumentView.scss');

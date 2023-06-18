@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ButtonGroup } from './ButtonGroup';
 import { ContentModelJson } from './model/ContentModelJson';
 import { css } from '@fluentui/react/lib/Utilities';
-import { getObjectKeys } from 'roosterjs-editor-dom';
+import { getObjectKeys } from 'lwyj123-roosterjs-editor-dom';
 import { useProperty } from '../hooks/useProperty';
 import {
     ContentModelBlockWithCache,
@@ -10,7 +10,7 @@ import {
     ContentModelGeneralBlock,
     ContentModelWithDataset,
     DatasetFormat,
-} from 'roosterjs-content-model';
+} from 'lwyj123-roosterjs-content-model';
 
 const styles = require('./ContentModelView.scss');
 const MetadataKey = 'editingInfo';

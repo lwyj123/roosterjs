@@ -1,8 +1,8 @@
-import { createElement } from 'roosterjs-editor-dom';
-import { CreateElementData } from 'roosterjs-editor-types';
-import { insertImage } from 'roosterjs-content-model';
+import { createElement } from 'lwyj123-roosterjs-editor-dom';
+import { CreateElementData } from 'lwyj123-roosterjs-editor-types';
+import { insertImage } from 'lwyj123-roosterjs-content-model';
 import { InsertImageButtonStringKey, RibbonButton } from 'roosterjs-react';
-import { isContentModelEditor } from 'roosterjs-content-model';
+import { isContentModelEditor } from 'lwyj123-roosterjs-content-model';
 
 const FileInput: CreateElementData = {
     tag: 'input',

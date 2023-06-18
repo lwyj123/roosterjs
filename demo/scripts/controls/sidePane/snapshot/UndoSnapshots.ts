@@ -1,11 +1,11 @@
-import { Snapshot, Snapshots, UndoSnapshotsService } from 'roosterjs-editor-types';
+import { Snapshot, Snapshots, UndoSnapshotsService } from 'lwyj123-roosterjs-editor-types';
 import {
     addSnapshotV2,
     canMoveCurrentSnapshot,
     moveCurrentSnapshot,
     clearProceedingSnapshotsV2,
     canUndoAutoComplete,
-} from 'roosterjs-editor-dom';
+} from 'lwyj123-roosterjs-editor-dom';
 
 export default class UndoSnapshots implements UndoSnapshotsService<Snapshot> {
     private hijackUndoSnapshotCallback: undefined | ((snapshot: Snapshot) => void);

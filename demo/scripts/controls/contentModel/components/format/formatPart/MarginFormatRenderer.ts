@@ -1,6 +1,6 @@
 import { createTextFormatRendererGroup } from '../utils/createTextFormatRenderer';
 import { FormatRenderer } from '../utils/FormatRenderer';
-import { MarginFormat } from 'roosterjs-content-model';
+import { MarginFormat } from 'lwyj123-roosterjs-content-model';
 
 type MarginName = keyof MarginFormat;
 const MarginNames: MarginName[] = ['marginTop', 'marginRight', 'marginBottom', 'marginLeft'];

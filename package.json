@@ -1,10 +1,10 @@
 {
-    "name": "roosterjs",
+    "name": "lwyj123-roosterjs",
     "version": "0.0.0",
     "description": "Framework-independent javascript editor",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Microsoft/roosterjs"
+        "url": "https://github.com/lwyj123/roosterjs"
     },
     "license": "MIT",
     "scripts": {
@@ -14,7 +14,7 @@
         "normalize": "node tools/build.js normalize",
         "pack": "node tools/build.js pack",
         "pack:prod": "node tools/build.js packprod",
-        "b": "node tools/build.js clean normalize buildcommonjs",
+        "b": "node tools/build.js clean normalize buildcommonjs buildmjs dts",
         "builddemo": "node tools/build.js builddemo",
         "builddoc": "node tools/build.js builddoc",
         "build-esm": "node tools/build.js clean checkdep normalize tslint buildmjs dts packprod",

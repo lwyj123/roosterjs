@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ContentModelBr } from 'roosterjs-content-model';
+import { ContentModelBr } from 'lwyj123-roosterjs-content-model';
 import { ContentModelView } from '../ContentModelView';
 import { SegmentFormatView } from '../format/SegmentFormatView';
 

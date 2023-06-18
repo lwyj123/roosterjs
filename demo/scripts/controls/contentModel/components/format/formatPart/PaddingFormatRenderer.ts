@@ -1,6 +1,6 @@
 import { createTextFormatRendererGroup } from '../utils/createTextFormatRenderer';
 import { FormatRenderer } from '../utils/FormatRenderer';
-import { PaddingFormat } from 'roosterjs-content-model';
+import { PaddingFormat } from 'lwyj123-roosterjs-content-model';
 
 type PaddingName = keyof PaddingFormat;
 const PaddingNames: PaddingName[] = ['paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft'];

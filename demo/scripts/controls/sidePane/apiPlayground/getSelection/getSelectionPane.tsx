@@ -6,7 +6,7 @@ import {
     SelectionRangeEx,
     SelectionRangeTypes,
     TableSelection,
-} from 'roosterjs-editor-types';
+} from 'lwyj123-roosterjs-editor-types';
 
 interface SelectionPaneState {
     selection: SelectionRangeEx;

@@ -1,16 +1,16 @@
 import BuildInPluginState, { BuildInPluginList, UrlPlaceholder } from './BuildInPluginState';
-import { AutoFormat } from 'roosterjs-editor-plugins/lib/AutoFormat';
-import { ContentEdit } from 'roosterjs-editor-plugins/lib/ContentEdit';
-import { CustomReplace as CustomReplacePlugin } from 'roosterjs-editor-plugins/lib/CustomReplace';
-import { CutPasteListChain } from 'roosterjs-editor-plugins/lib/CutPasteListChain';
-import { EditorPlugin } from 'roosterjs-editor-types';
-import { HyperLink } from 'roosterjs-editor-plugins/lib/HyperLink';
-import { ImageEdit } from 'roosterjs-editor-plugins/lib/ImageEdit';
-import { Paste } from 'roosterjs-editor-plugins/lib/Paste';
-import { TableCellSelection } from 'roosterjs-editor-plugins/lib/TableCellSelection';
-import { TableResize } from 'roosterjs-editor-plugins/lib/TableResize';
-import { Watermark } from 'roosterjs-editor-plugins/lib/Watermark';
-import { ContentModelPastePlugin } from 'roosterjs-content-model';
+import { AutoFormat } from 'lwyj123-roosterjs-editor-plugins/lib/AutoFormat';
+import { ContentEdit } from 'lwyj123-roosterjs-editor-plugins/lib/ContentEdit';
+import { CustomReplace as CustomReplacePlugin } from 'lwyj123-roosterjs-editor-plugins/lib/CustomReplace';
+import { CutPasteListChain } from 'lwyj123-roosterjs-editor-plugins/lib/CutPasteListChain';
+import { EditorPlugin } from 'lwyj123-roosterjs-editor-types';
+import { HyperLink } from 'lwyj123-roosterjs-editor-plugins/lib/HyperLink';
+import { ImageEdit } from 'lwyj123-roosterjs-editor-plugins/lib/ImageEdit';
+import { Paste } from 'lwyj123-roosterjs-editor-plugins/lib/Paste';
+import { TableCellSelection } from 'lwyj123-roosterjs-editor-plugins/lib/TableCellSelection';
+import { TableResize } from 'lwyj123-roosterjs-editor-plugins/lib/TableResize';
+import { Watermark } from 'lwyj123-roosterjs-editor-plugins/lib/Watermark';
+import { ContentModelPastePlugin } from 'lwyj123-roosterjs-content-model';
 import {
     createContextMenuPlugin,
     createImageEditMenuProvider,

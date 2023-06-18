@@ -1,4 +1,4 @@
-import { IEditor, PluginEvent } from 'roosterjs-editor-types';
+import { IEditor, PluginEvent } from 'lwyj123-roosterjs-editor-types';
 import { SidePaneElementProps } from '../SidePaneElement';
 
 export default interface ApiPaneProps extends SidePaneElementProps {
