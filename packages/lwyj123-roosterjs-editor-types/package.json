@@ -2,5 +2,6 @@
     "name": "lwyj123-roosterjs-editor-types",
     "description": "Type definition for roosterjs",
     "dependencies": {},
-    "main": "./lib/index.ts"
+    "main": "./lib/index.ts",
+    "version": "0.0.1-alpha.1"
 }

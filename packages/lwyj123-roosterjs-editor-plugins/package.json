@@ -7,5 +7,6 @@
         "lwyj123-roosterjs-editor-dom": "",
         "lwyj123-roosterjs-editor-api": ""
     },
-    "main": "./lib/index.ts"
+    "main": "./lib/index.ts",
+    "version": "0.0.1-alpha.1"
 }

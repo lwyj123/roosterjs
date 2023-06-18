@@ -13,28 +13,31 @@ function publish(options) {
         const json = readPackageJson(packageName, false /*readFromSourceFolder*/);
         const localVersion = json.version;
         const versionMatch = VersionRegex.exec(localVersion);
-        const tagname = (versionMatch && versionMatch[2]) || 'latest';
+        // const tagname = (versionMatch && versionMatch[2]) || 'latest';
+        const tagname = 'alpha';
         let npmVersion = '';
 
-        try {
-            npmVersion = exec(`npm view ${packageName}@${tagname} version`).toString().trim();
-        } catch (e) {}
+        // try {
+        //     npmVersion = exec(`npm view ${packageName}@${tagname} version`).toString().trim();
+        // } catch (e) {}
 
-        if (localVersion == '0.0.0') {
-            console.log(
-                `Skip publishing package ${packageName}, because version (${localVersion}) is not ready to publish`
-            );
-        } else if (localVersion == npmVersion) {
-            console.log(
-                `Skip publishing package ${packageName}, because version (${npmVersion}) is not changed`
-            );
-        } else {
-            let npmrcName = path.join(distPath, packageName, '.npmrc');
-            if (options.token) {
-                const npmrc = `${NpmrcContent}${options.token}\n`;
-                fs.writeFileSync(npmrcName, npmrc);
-            }
+        // if (localVersion == '0.0.0') {
+        //     console.log(
+        //         `Skip publishing package ${packageName}, because version (${localVersion}) is not ready to publish`
+        //     );
+        // } else if (localVersion == npmVersion) {
+        //     console.log(
+        //         `Skip publishing package ${packageName}, because version (${npmVersion}) is not changed`
+        //     );
+        // } else {
+            // console.log(`fake publishing package ${packageName}, because version (${npmVersion})`)
+            // let npmrcName = path.join(distPath, packageName, '.npmrc');
+            // if (options.token) {
+            //     const npmrc = `${NpmrcContent}${options.token}\n`;
+            //     fs.writeFileSync(npmrcName, npmrc);
+            // }
 
+            console.log(`publishing package ${packageName}, because version (${npmVersion})`)
             try {
                 const basePublishString = `npm publish`;
                 const publishString = basePublishString + ` --tag ${tagname}`;
@@ -50,7 +53,7 @@ function publish(options) {
                     fs.unlinkSync(npmrcName);
                 }
             }
-        }
+        // }
     });
 }
 

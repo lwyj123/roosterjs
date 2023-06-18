@@ -1,7 +1,7 @@
 {
     "name": "lwyj123-roosterjs",
     "version": "0.0.0",
-    "description": "Framework-independent javascript editor",
+    "description": "Framework-independent javascript editor with shadowDOM fork",
     "repository": {
         "type": "git",
         "url": "https://github.com/lwyj123/roosterjs"
