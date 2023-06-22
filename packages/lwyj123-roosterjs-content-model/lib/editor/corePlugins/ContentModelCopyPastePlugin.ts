@@ -35,7 +35,6 @@ import {
 } from 'lwyj123-roosterjs-editor-types';
 
 /**
- * @internal
  * Copy and paste plugin for handling onCopy and onPaste event
  */
 export default class ContentModelCopyPastePlugin implements PluginWithState<CopyPastePluginState> {

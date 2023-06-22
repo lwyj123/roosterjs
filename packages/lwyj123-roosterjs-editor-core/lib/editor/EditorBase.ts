@@ -328,6 +328,7 @@ export class EditorBase<TEditorCore extends EditorCore, TEditorOptions extends E
      * @param clipboardData Clipboard data retrieved from clipboard
      * @param pasteAsText Force pasting as plain text. Default value is false
      * @param applyCurrentStyle True if apply format of current selection to the pasted content,
+     * @param pasteAsImage: When set to true, if the clipboardData contains a imageDataUri will paste the image to the editor
      * false to keep original format.  Default value is false. When pasteAsText is true, this parameter is ignored
      */
     public paste(

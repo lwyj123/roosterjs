@@ -48,10 +48,14 @@ export { ContentModelHyperLinkFormat } from './format/ContentModelHyperLinkForma
 export { ContentModelCodeFormat } from './format/ContentModelCodeFormat';
 export { ContentModelFormatContainerFormat } from './format/ContentModelFormatContainerFormat';
 
+export { ContentModelFormatState } from './format/formatState/ContentModelFormatState';
+export { ImageFormatState } from './format/formatState/ImageFormatState';
+
 export { VerticalAlignFormat } from './format/formatParts/VerticalAlignFormat';
 export { BackgroundColorFormat } from './format/formatParts/BackgroundColorFormat';
 export { BorderFormat } from './format/formatParts/BorderFormat';
 export { BorderBoxFormat } from './format/formatParts/BorderBoxFormat';
+export { BoxShadowFormat } from './format/formatParts/BoxShadowFormat';
 export { IdFormat } from './format/formatParts/IdFormat';
 export { SizeFormat } from './format/formatParts/SizeFormat';
 export { SpacingFormat } from './format/formatParts/SpacingFormat';
@@ -88,6 +92,7 @@ export { DatasetFormat } from './format/formatParts/DatasetFormat';
 export { WhiteSpaceFormat } from './format/formatParts/WhiteSpaceFormat';
 export { WordBreakFormat } from './format/formatParts/WordBreakFormat';
 export { ZoomScaleFormat } from './format/formatParts/ZoomScaleFormat';
+export { TableLayoutFormat } from './format/formatParts/TableLayoutFormat';
 
 export { ContentModelFormatMap } from './format/ContentModelFormatMap';
 
@@ -149,6 +154,12 @@ export {
     CreateEditorContext,
     ContentModelCoreApiMap,
     ContentModelEditorCore,
+    CreateContentModel,
+    SetContentModel,
 } from './ContentModelEditorCore';
 
-export { default as ContentModelBeforePasteEvent } from './event/ContentModelBeforePasteEvent';
+export {
+    default as ContentModelBeforePasteEvent,
+    ContentModelBeforePasteEventData,
+    CompatibleContentModelBeforePasteEvent,
+} from './event/ContentModelBeforePasteEvent';

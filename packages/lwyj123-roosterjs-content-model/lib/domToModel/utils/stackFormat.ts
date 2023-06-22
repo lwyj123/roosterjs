@@ -14,7 +14,7 @@ export interface StackFormatOptions {
     segment?: 'shallowClone' | 'shallowCloneForBlock' | 'empty';
     paragraph?: 'shallowClone' | 'shallowCloneForGroup' | 'empty';
     blockDecorator?: 'empty';
-    link?: 'linkDefault' | 'empty';
+    link?: 'linkDefault' | 'cloneFormat' | 'empty';
     code?: 'codeDefault' | 'empty';
 }
 
@@ -67,7 +67,10 @@ export function stackFormat(
     }
 }
 
-function stackLinkInternal(linkFormat: ContentModelLink, link?: 'linkDefault' | 'empty') {
+function stackLinkInternal(
+    linkFormat: ContentModelLink,
+    link?: 'linkDefault' | 'cloneFormat' | 'empty'
+) {
     switch (link) {
         case 'linkDefault':
             return {
@@ -83,8 +86,12 @@ function stackLinkInternal(linkFormat: ContentModelLink, link?: 'linkDefault' | 
                 dataset: {},
             };
 
-        default:
-            return linkFormat;
+        case 'cloneFormat':
+            default:
+                return {
+                    dataset: linkFormat.dataset,
+                    format: { ...linkFormat.format },
+                };
     }
 }
 

@@ -26,7 +26,8 @@
             "../packages/lwyj123-roosterjs-editor-api/lib/index.ts",
             "../packages/lwyj123-roosterjs-editor-plugins/lib/index.ts",
             "../packages/lwyj123-roosterjs-color-utils/lib/index.ts",
-            "../packages/roosterjs/lib/index.ts"
+            "../packages/roosterjs/lib/index.ts",
+            "../packages/roosterjs-content-model/lib/index.ts"
         ],
         "plugin": ["typedoc-plugin-remove-references", "typedoc-plugin-external-module-map"],
         "out": "../dist/deploy/docs",

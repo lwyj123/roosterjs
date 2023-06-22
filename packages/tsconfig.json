@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "strict": true,
         "target": "ES6",
         "module": "commonjs",
         "outDir": "../dist",
@@ -17,39 +18,8 @@
             "*": ["*"]
         },
         "rootDir": ".",
-        "composite": true,
         "lib": ["ES2017", "dom"],
         "types": []
     },
-
-    "references": [
-        {
-            "path": "lwyj123-roosterjs-editor-types/tsconfig.child.json"
-        },
-        {
-            "path": "lwyj123-roosterjs-editor-types-compatible/tsconfig.child.json"
-        },
-        {
-            "path": "lwyj123-roosterjs-editor-dom/tsconfig.child.json"
-        },
-        {
-            "path": "lwyj123-roosterjs-editor-core/tsconfig.child.json"
-        },
-        {
-            "path": "lwyj123-roosterjs-editor-api/tsconfig.child.json"
-        },
-        {
-            "path": "lwyj123-roosterjs-editor-plugins/tsconfig.child.json"
-        },
-        {
-            "path": "lwyj123-roosterjs-color-utils/tsconfig.child.json"
-        },
-        {
-            "path": "lwyj123-roosterjs/tsconfig.child.json"
-        },
-        {
-            "path": "lwyj123-roosterjs-content-model/tsconfig.child.json"
-        }
-    ],
-    "include": []
+    "include": ["./*/lib/**/*.ts"]
 }
